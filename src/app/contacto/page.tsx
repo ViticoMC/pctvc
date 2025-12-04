@@ -1,0 +1,219 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
+import { PageHeader } from "@/components/page-header"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { MapPin, Mail, Phone, Clock, Send } from "lucide-react"
+
+const contactInfo = [
+  {
+    icon: MapPin,
+    title: "Visita nuestra oficina",
+    details: ["Carretera a Planta Mecánica,", "Santa Clara, Villa Clara"],
+  },
+  {
+    icon: Mail,
+    title: "Correos",
+    details: ["pctvillaclara@pctvc.cu", "clientes@pctvc.cu"],
+  },
+  {
+    icon: Phone,
+    title: "Teléfono",
+    details: ["+53 42 123456"],
+  },
+  {
+    icon: Clock,
+    title: "Horario",
+    details: ["Lunes - Viernes: 8:00 AM - 5:00 PM"],
+  },
+]
+
+function ContactForm() {
+  const { ref, isVisible } = useScrollAnimation()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    setIsSubmitting(false)
+  }
+
+  return (
+    <section ref={ref} className="py-20 bg-background" id="contacto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <div
+            className={cn(
+              "transition-all duration-700",
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8",
+            )}
+          >
+            <h2 className="text-3xl font-bold text-primary mb-6">Ponte en Contacto</h2>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              No dudes en comunicarte. Simplemente complete el formulario de contacto aquí y nos aseguraremos de
+              responderle lo más rápido posible.
+            </p>
+
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => {
+                const Icon = info.icon
+                return (
+                  <div
+                    key={info.title}
+                    className={cn(
+                      "flex items-start gap-4 transition-all duration-700",
+                      isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8",
+                    )}
+                    style={{ transitionDelay: `${300 + index * 100}ms` }}
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">{info.title}</h3>
+                      {info.details.map((detail, idx) => (
+                        <p key={idx} className="text-muted-foreground text-sm">
+                          {detail}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* Form */}
+          <div
+            className={cn(
+              "bg-card border border-border rounded-2xl p-8 shadow-lg transition-all duration-700 delay-200",
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8",
+            )}
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="nombre">
+                    Nombre <span className="text-destructive">*</span>
+                  </Label>
+                  <Input id="nombre" placeholder="Nombre" required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="apellidos">Apellidos</Label>
+                  <Input id="apellidos" placeholder="Apellidos" />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="correo">
+                  Correo <span className="text-destructive">*</span>
+                </Label>
+                <Input id="correo" type="email" placeholder="Dirección de Correo" required />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="asunto">Asunto</Label>
+                <Input id="asunto" placeholder="Asunto" />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="mensaje">
+                  Mensaje <span className="text-destructive">*</span>
+                </Label>
+                <Textarea id="mensaje" placeholder="Mensaje" rows={5} required className="resize-none" />
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  "Enviando..."
+                ) : (
+                  <>
+                    <Send className="h-4 w-4 mr-2" />
+                    Enviar
+                  </>
+                )}
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function MapSection() {
+  const { ref, isVisible } = useScrollAnimation()
+
+  return (
+    <section ref={ref} className="py-20 bg-muted">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          className={cn(
+            "text-2xl font-bold text-primary text-center mb-8 transition-all duration-700",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+          )}
+        >
+          Nuestra Ubicación
+        </h2>
+
+        <div
+          className={cn(
+            "bg-background rounded-2xl overflow-hidden shadow-lg h-[400px] transition-all duration-700 delay-200",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+          )}
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.5!2d-79.95!3d22.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDI1JzM0LjciTiA3OcKwNTcnMDAuMCJX!5e0!3m2!1ses!2scu!4v1234567890"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="grayscale hover:grayscale-0 transition-all duration-500"
+          />
+        </div>
+
+        <p
+          className={cn(
+            "text-center text-sm text-muted-foreground mt-4 transition-all duration-700 delay-300",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+          )}
+        >
+          56 visitas totales
+        </p>
+      </div>
+    </section>
+  )
+}
+
+export default function ContactoPage() {
+  return (
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      <PageHeader
+        title="Contacto"
+        subtitle="Si Tienes Alguna Pregunta, Comentario O Simplemente Quieres Saludar, No Dudes En Ponerte En Contacto Con Nosotros."
+      />
+      <ContactForm />
+      <MapSection />
+      <Footer />
+    </main>
+  )
+}
