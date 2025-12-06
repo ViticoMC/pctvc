@@ -4,6 +4,25 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
+import localFont from "next/font/local";
+import Logo from "@/components/logo";
+
+const duneRise = localFont({
+  src: [
+    {
+      path: "../assets/fonts/Dune_Rise.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Dune_Rise.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-dune-rise",
+});
+
 // const _inter = Inter({ subsets: ["latin"] })
 // const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
@@ -21,9 +40,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`font-sans antialiased `}>
+      <body className={`font-sans antialiased ${duneRise.variable} relative`}>
         {children}
         <Analytics />
+        {/* <div className="fixed z-100 top-2 left-2 p-1 rounded-lg ">
+          <Logo width={200} height={200} />
+        </div> */}
       </body>
     </html>
   )

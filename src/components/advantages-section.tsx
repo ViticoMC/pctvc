@@ -46,47 +46,26 @@ const advantages = [
 ]
 
 export function AdvantagesSection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   return (
-    <section ref={sectionRef} id="ventajas" className="py-24 lg:py-32 bg-background">
+    <section id="ventajas" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <span
-            className={`inline-block text-accent font-semibold text-md tracking-wider uppercase mb-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
+          <p
+            className="inline-block text-accent font-semibold text-md tracking-wider uppercase mb-4 "
+            data-usal="fade-t duration-500"
           >
             ¿Por qué elegirnos?
-          </span>
+          </p>
           <h2
-            className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground"
+            data-usal="fade-t duration-500 delay-400"
           >
             Principales Ventajas
           </h2>
         </div>
 
         <div className="flex md:flex-row flex-col gap-5 justify-between items-center relative">
-          <span className="md:h-2 h-0 bg-linear-to-r from-accent to-accent/40 absolute bottom-[50%] w-[80%]" />
-
           {advantages.map((advantage, index) => (
             // <div
             //   key={advantage.title}
@@ -138,9 +117,7 @@ export function AdvantagesSection() {
             // </div>
             <div
               key={advantage.title}
-              className={`group bg-card max-w-80 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-border hover:border-accent/30 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              style={{ transitionDelay: `${(index + 3) * 100}ms` }}
+              className="group bg-card max-w-80 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-border hover:border-accent/30 "
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
                 <advantage.icon className="h-7 w-7 text-primary group-hover:text-accent transition-colors" />

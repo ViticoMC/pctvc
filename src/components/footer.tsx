@@ -1,5 +1,6 @@
 import { Facebook, Twitter, MapPin } from "lucide-react"
 import Link from "next/link"
+import Logo from "./logo"
 
 const footerLinks = {
   enlaces: [
@@ -11,9 +12,9 @@ const footerLinks = {
     { name: "Mapa del Sitio", href: "#" },
   ],
   sitios: [
-    { name: "Universidad Central «Marta Abreu» de Las Villas", href: "#" },
-    { name: "GESIME", href: "#" },
-    { name: "CEDAI", href: "#" },
+    { name: "Universidad Central «Marta Abreu» de Las Villas", href: "https://www.uclv.edu.cu/" },
+    { name: "GESIME", href: "https://www.sime.cu/" },
+    { name: "CEDAI", href: "https://www.cedai.com.cu/" },
   ],
 }
 
@@ -24,8 +25,8 @@ export function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">PC</span>
+              <div className=" rounded-xl  flex items-center justify-center">
+                <Logo width={100} height={100} />
               </div>
               <div>
                 <span className="font-bold text-sm">
@@ -71,7 +72,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.sitios.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background/70 hover:text-accent transition-colors">
+                  <a href={link.href} target="_blank" className="text-background/70 hover:text-accent transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -81,12 +82,17 @@ export function Footer() {
 
           <div>
             <h4 className="font-semibold text-lg mb-4">Ubicación</h4>
-            <div className="rounded-lg overflow-hidden bg-background/10 h-32 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-6 w-6 mx-auto mb-2 text-accent" />
-                <p className="text-xs text-background/70">TECNOSIME</p>
-                <p className="text-xs text-background/70">UEB Maquimotor</p>
-              </div>
+            <div className="rounded-lg overflow-hidden bg-background/10  flex items-center justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.5!2d-79.95!3d22.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDI1JzM0LjciTiA3OcKwNTcnMDAuMCJX!5e0!3m2!1ses!2scu!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale hover:grayscale-0 transition-all duration-500"
+              />
             </div>
           </div>
         </div>

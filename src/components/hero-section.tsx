@@ -37,7 +37,7 @@ export function HeroSection() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div ref={heroRef} className="absolute inset-0 bg-linear-to-br from-primary via-primary/90 to-primary/80">
-        <div className="absolute inset-0 bg-[url('/abstract-technology-network-pattern-dark-blue.jpg')] opacity-20 bg-cover bg-center" />
+        {/* <div className="absolute inset-0 bg-[url('/abstract-technology-network-pattern-dark-blue.jpg')] opacity-20 bg-cover bg-center" /> */}
         <div className="absolute inset-0 bg-linear-to-t from-primary/50 to-transparent" />
       </div>
 
@@ -48,17 +48,17 @@ export function HeroSection() {
         <div className="absolute bottom-1/4 left-1/3 w-80 h-80 rounded-full border border-white/5 animate-pulse delay-500" />
       </div>
 
-      <div className="relative z-10 min-w-screen mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="animate-fade-in">
-          {/* <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-8 border border-white/20">
+      <div className="relative z-10 min-w-screen mx-auto">
+        {/* <div className="animate-fade-in">
+          <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-8 border border-white/20">
             Innovación • Tecnología • Desarrollo
-          </span> */}
-        </div>
+          </span>
+        </div> */}
         {/* Layout: side-by-side on md+, stacked on small (info on top, foto below) */}
-        <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 py-8">
+        <div className="flex flex-row items-stretch gap-8">
           {/* Image slider */}
-          <div className="w-full md:w-1/2">
-            <div className="relative h-64 md:h-full rounded-xl overflow-hidden bg-black/10">
+          <div className="min-h-screen min-w-screen ">
+            <div className="relative h-full rounded-xl overflow-hidden bg-black/10">
               {images.map((src, i) => (
                 <img
                   key={i}
@@ -98,56 +98,15 @@ export function HeroSection() {
                   />
                 ))}
               </div>
+              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 md:px-10 px-4 md:py-4 py-2 bg-black/40 backdrop-blur-md rounded-3xl text-center text-white text-2xl md:text-3xl font-semibold tracking-wide">
+                Alianza Oportunidad y Desarrollo
+              </div>
+
             </div>
           </div>
 
           {/* Info section */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
-              <span className="block">Parque Científico</span>
-              <span className="block">Tecnológico</span>
-              <span className="block text-accent">Villa Clara</span>
-            </h1>
 
-            <p className="text-xl  text-white/80 max-w-2xl mb-6 animate-fade-in leading-relaxed">
-              {/* El Parque Científico Tecnológico de Villa Clara es un centro de innovación que promueve la colaboración
-              entre gobierno, academia y empresas para impulsar el desarrollo científico-tecnológico en Cuba. Ofrece
-              un entorno dinámico para crear y hacer crecer empresas tecnológicas, facilitando la transferencia de
-              conocimientos y tecnologías. */}
-              Alianza Oportunidad y Desarrollo
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center md:justify-start justify-center gap-4 animate-fade-in">
-              <Link href="/contacto#contacto">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg group">
-                  Contactar Ahora
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm bg-transparent"
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Ver Video
-              </Button>
-            </div>
-
-            {/* <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in">
-              {[
-                { value: "50+", label: "Empresas" },
-                { value: "200+", label: "Profesionales" },
-                { value: "15+", label: "Años de experiencia" },
-                { value: "100+", label: "Proyectos" },
-              ].map((stat, index) => (
-                <div key={index} className="text-center md:text-left">
-                  <div className="text-3xl sm:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-white/70 text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div> */}
-          </div>
         </div>
       </div>
 
@@ -157,5 +116,58 @@ export function HeroSection() {
         </div>
       </div>
     </section>
+  )
+}
+
+
+const InfoSection = () => {
+  return (
+    <div className="w-full md:w-1/2 text-center md:text-left">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
+        <span className="block">Parque Científico</span>
+        <span className="block">Tecnológico</span>
+        <span className="block text-accent">Villa Clara</span>
+      </h1>
+
+      <p className="text-xl  text-white/80 max-w-2xl mb-6 animate-fade-in leading-relaxed">
+        El Parque Científico Tecnológico de Villa Clara es un centro de innovación que promueve la colaboración
+        entre gobierno,  el sector del conocimiento y el sector empresarial
+        para impulsar el desarrollo científico-tecnológico en Cuba. Ofrece
+        un entorno dinámico para crear y hacer crecer empresas tecnológicas, facilitando la transferencia de
+        conocimientos y tecnologías.
+        Alianza Oportunidad y Desarrollo
+      </p>
+
+      <div className="flex flex-col sm:flex-row items-center md:justify-start justify-center gap-4 animate-fade-in">
+        <Link href="/contacto#contacto">
+          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg group">
+            Contactar Ahora
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </Link>
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm bg-transparent"
+        >
+          <Play className="mr-2 h-5 w-5" />
+          Ver Video
+        </Button>
+      </div>
+
+      <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in">
+        {[
+          { value: "50+", label: "Empresas" },
+          { value: "200+", label: "Profesionales" },
+          { value: "15+", label: "Años de experiencia" },
+          { value: "100+", label: "Proyectos" },
+        ].map((stat, index) => (
+          <div key={index} className="text-center md:text-left">
+            <div className="text-3xl sm:text-4xl font-bold text-white mb-2">{stat.value}</div>
+            <div className="text-white/70 text-sm">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }

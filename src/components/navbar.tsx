@@ -50,13 +50,15 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        showTransparent ? "bg-transparent" : "bg-background/95 backdrop-blur-md shadow-lg ",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ",
+
+        showTransparent ? "bg-transparent backdrop-blur-sm" : "bg-background/95 backdrop-blur-md shadow-lg ",
+
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 lg:h-16">
-          <Link href="/" className="flex items-center gap-3  ">
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center gap-3 ">
             {/* <div className="w-9 h-9 lg:w-10 lg:h-10 rounded-xl bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-base lg:text-lg">PC</span>
             </div>
@@ -70,7 +72,7 @@ export function Navbar() {
                 PCTVC
               </span>
             </div> */}
-            <Logo />
+            <Logo width={150} height={150} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -85,9 +87,9 @@ export function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 text-md font-medium transition-colors hover:text-accent py-2",
-                    showTransparent ? "text-white/90" : "text-foreground",
-                    pathname === item.href && "text-accent",
+                    "flex items-center gap-1 text-md font-bold transition-colors hover:text-gray-700 hover:bg-accent/70 rounded-2xl p-2 text-foreground text-bold",
+                    // showTransparent ? "text-white/90" : "text-foreground",
+                    pathname === item.href && "text-white bg-accent/80",
                   )}
                 >
                   {item.name}
@@ -112,11 +114,11 @@ export function Navbar() {
                 )}
               </div>
             ))}
-            <Link href="/contacto">
+            {/* <Link href="/contacto">
               <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 Contáctanos
               </Button>
-            </Link>
+            </Link> */}
           </div>
 
           <button

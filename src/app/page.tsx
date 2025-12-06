@@ -7,19 +7,23 @@ import { EventsSection } from "@/components/events-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
+import { USALProvider } from '@usal/react';
+
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navbar />
-      <HeroSection />
-      <WelcomeSection />
-      <ServicesSection />
-      <AdvantagesSection />
-      <NewsSection />
-      <EventsSection />
-      <ContactSection />
-      <Footer />
-    </main>
+    <USALProvider>
+      <main className="min-h-screen bg-background">
+        <Navbar />
+        <HeroSection />
+        <WelcomeSection />
+        <ServicesSection />
+        <AdvantagesSection />
+        <NewsSection />
+        <EventsSection />
+        <ContactSection />
+        <Footer />
+      </main>
+    </USALProvider>
   )
 }

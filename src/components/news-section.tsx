@@ -64,7 +64,7 @@ export function NewsSection() {
               className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
             >
-              Últimas Noticias
+              Artículos tecnicos, entrevistas y noticias nacionales e internacionales
             </h2>
           </div>
           <Button
