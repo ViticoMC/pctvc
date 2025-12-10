@@ -6,6 +6,7 @@ import { PageHeader } from "@/components/page-header"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
 import { Target, Eye } from "lucide-react"
+import Historia from "@/components/historia"
 
 const accionistas = [
   { name: "TECNOSIME", logo: "/tecnosime-logo.jpg" },
@@ -47,7 +48,7 @@ function MisionVision() {
   return (
     <section ref={ref} className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
+        {/* <div
           className={cn(
             "mb-12 transition-all duration-700",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
@@ -58,12 +59,12 @@ function MisionVision() {
             Ofrecemos Servicios A Clientes Del PCT VC Las Empresas Cubanas Estatales Y Privadas, Empresas Extranjeras,
             Trabajadores Por Cuenta Propia Y Personas Naturales (Incluyendo Estudiantes Y Jóvenes Emprendedores).
           </p>
-        </div>
+        </div> */}
 
         <div className="grid md:grid-cols-2 gap-8">
           <div
             className={cn(
-              "bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 text-primary-foreground transition-all duration-700 delay-200",
+              "bg-linear-to-br from-primary to-primary/80 rounded-2xl p-8 text-primary-foreground transition-all duration-700 delay-200",
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
             )}
           >
@@ -73,15 +74,16 @@ function MisionVision() {
             <h3 className="text-2xl font-bold mb-4">MISIÓN</h3>
             <p className="text-white/90 leading-relaxed">
               Contribuir al desarrollo industrial, participando y coadyuvando a la creación, implantación,
-              funcionamiento, fortalecimiento al nuevo entorno productivo que sirve de acogida a empresas y organismos,
-              adoptando sistemas de gestión integrada que incrementen el fluido de bienes exportables y la sustitución
-              de importaciones, en armonía con el medio ambiente.
+              funcionamiento, fortalecimiento , lanzamiento de nuevas entidades (productos nuevos  o mejorados y empresas),
+              adoptando sistemas de gestion integrada que incrementen el fondo de bienes exportables y la sustitucion de
+              importaciones en armonía con el medio ambiente
+
             </p>
           </div>
 
           <div
             className={cn(
-              "bg-gradient-to-br from-accent to-accent/80 rounded-2xl p-8 text-accent-foreground transition-all duration-700 delay-300",
+              "bg-linear-to-br from-accent to-accent/80 rounded-2xl p-8 text-accent-foreground transition-all duration-700 delay-300",
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
             )}
           >
@@ -90,10 +92,10 @@ function MisionVision() {
             </div>
             <h3 className="text-2xl font-bold mb-4">VISIÓN</h3>
             <p className="text-white/90 leading-relaxed">
-              Ser un referente de ecosistema de innovación y transferencia científica y tecnológica, con un portafolio
-              de Industrias 4.0, para propiciar la operación y comercialización de nuevas y reformadas empresas,
-              proporcionando productos y servicios de alto valor agregado y un sistema de gestión innovador orientado a
-              la calidad, el fomento de la economía circular.
+              Ser un referente de ecosistema de innovación y transferencia científica en la rama de las industria ,
+              con un minimo viable de industria 4.0 , para promover, la generación y sostenibilidad de nuevas y exigentes
+              empresas , proporcionando productos y servicios de alto valor agregado y un sistema de gestión alineado
+              a la Política de Desarrollo Industrial.
             </p>
           </div>
         </div>
@@ -114,7 +116,7 @@ function Accionistas() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
           )}
         >
-          Accionistas Y Patrocinador
+          Instituciones Colaboradoras
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
@@ -244,14 +246,15 @@ function JuntaDirectiva() {
 export default function QuienesSomosPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      {/* <Navbar /> */}
       <PageHeader title="Quiénes Somos" />
       <MisionVision />
+      <Historia />
       <Accionistas />
       <Membresia />
       <Stats />
       <JuntaDirectiva />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }

@@ -114,14 +114,14 @@ function ActividadesSecundarias() {
 export default function ServiciosPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      {/* <Navbar /> */}
       <PageHeader
         title="Servicios"
-        subtitle="Pueden Ser Clientes Del PCT VC Las Empresas Cubanas Estatales Y Privadas, Empresas Extranjeras, Trabajadores Por Cuenta Propia Y Personas Naturales"
+      // subtitle="Pueden Ser Clientes Del PCT VC Las Empresas Cubanas Estatales Y Privadas, Empresas Extranjeras, Trabajadores Por Cuenta Propia Y Personas Naturales"
       />
       <ActividadesPrincipales />
       <ActividadesSecundarias />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }

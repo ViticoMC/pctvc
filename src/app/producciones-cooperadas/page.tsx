@@ -110,11 +110,11 @@ function Beneficios() {
 export default function ProduccionesCooperadasPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      {/* <Navbar /> */}
       <PageHeader title="Producciones Cooperadas" />
       <Introduction />
       <Beneficios />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }

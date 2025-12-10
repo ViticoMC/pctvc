@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <USALProvider>
       <main className="min-h-screen bg-background">
-        <Navbar />
+        {/* <Navbar /> */}
         <HeroSection />
         <WelcomeSection />
         <ServicesSection />
@@ -22,7 +22,7 @@ export default function Home() {
         <NewsSection />
         <EventsSection />
         <ContactSection />
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </USALProvider>
   )

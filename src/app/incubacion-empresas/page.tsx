@@ -111,11 +111,11 @@ function ServiciosIncubacion() {
 export default function IncubacionEmpresasPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      {/* <Navbar /> */}
       <PageHeader title="Incubación Empresas" />
       <Introduction />
       <ServiciosIncubacion />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }

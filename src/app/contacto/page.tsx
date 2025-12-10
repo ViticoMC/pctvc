@@ -206,14 +206,14 @@ function MapSection() {
 export default function ContactoPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      {/* <Navbar /> */}
       <PageHeader
         title="Contacto"
         subtitle="Si Tienes Alguna Pregunta, Comentario O Simplemente Quieres Saludar, No Dudes En Ponerte En Contacto Con Nosotros."
       />
       <ContactForm />
       <MapSection />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }

@@ -12,7 +12,7 @@ export function PageHeader({ title, subtitle }: PageHeaderProps) {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section className="relative p-32 pb-20 overflow-hidden">
+    <section className="relative p-32 pb-4 overflow-hidden">
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-linear-to-br from-primary via-primary/90 to-accent/80" />
 

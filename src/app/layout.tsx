@@ -6,6 +6,8 @@ import "./globals.css"
 
 import localFont from "next/font/local";
 import Logo from "@/components/logo";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "react-day-picker";
 
 const duneRise = localFont({
   src: [
@@ -41,8 +43,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`font-sans antialiased ${duneRise.variable} relative`}>
+        <Navbar />
         {children}
-        <Analytics />
+        <Footer />
+        {/* <Analytics /> */}
         {/* <div className="fixed z-100 top-2 left-2 p-1 rounded-lg ">
           <Logo width={200} height={200} />
         </div> */}

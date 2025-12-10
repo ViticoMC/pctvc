@@ -21,6 +21,10 @@ const navItems = [
       { name: "Incubación de Empresas", href: "/incubacion-empresas" },
     ],
   },
+  { name: "Colaboración", href: "/colaboracion" },
+  { name: "Galería", href: "/galeria" },
+  { name: "Eventos", href: "/eventos" },
+  { name: "Vinculación Academica", href: "/vinculacion-academica" },
   { name: "Contacto", href: "/contacto" },
 ]
 
@@ -156,7 +160,7 @@ export function Navbar() {
       <div
         className={cn(
           "lg:hidden overflow-hidden transition-all duration-300 ease-in-out",
-          isMobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0",
+          isMobileMenuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <div className="bg-background/98 backdrop-blur-md border-t border-border shadow-lg">

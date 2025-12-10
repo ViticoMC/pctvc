@@ -8,16 +8,16 @@ export function WelcomeSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-accent font-semibold text-md tracking-wider uppercase"
-              data-usal="fade-r duration-500"
+              data-usal="fade-r duration-600"
             >Bienvenidos</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6 leading-tight"
-              data-usal="fade-r duration-500 delay-500"
+              data-usal="fade-r duration-500 delay-200"
 
             >
               Un Espacio Diseñado para la <span className="text-primary">Innovación</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6"
-              data-usal="fade-r duration-500 delay-800"
+              data-usal="fade-r duration-500 delay-500"
 
             >
               El Parque Científico Tecnológico de Villa Clara es un centro de innovación que promueve la colaboración
@@ -41,7 +41,7 @@ export function WelcomeSection() {
           <div
           >
             <div className="relative"
-              data-usal="fade-l duration-900 delay-400"
+              data-usal="fade-l duration-900 "
             >
               <div className="aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
                 <img
