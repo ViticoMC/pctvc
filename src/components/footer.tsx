@@ -1,4 +1,4 @@
-import { Facebook, Twitter, MapPin } from "lucide-react"
+import { Facebook, Twitter, MapPin, Instagram } from "lucide-react"
 import Link from "next/link"
 import Logo from "./logo"
 
@@ -15,6 +15,7 @@ const footerLinks = {
     { name: "Universidad Central «Marta Abreu» de Las Villas", href: "https://www.uclv.edu.cu/" },
     { name: "GESIME", href: "https://www.sime.cu/" },
     { name: "CEDAI", href: "https://www.cedai.com.cu/" },
+    { name: "CITMA", href: "https://www.citma.gob.cu/" },
   ],
 }
 
@@ -49,7 +50,7 @@ export function Footer() {
                 href="#"
                 className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent transition-colors group"
               >
-                <Twitter className="h-5 w-5 text-background/70 group-hover:text-accent-foreground" />
+                <Instagram className="h-5 w-5 text-background/70 group-hover:text-accent-foreground" />
               </a>
             </div>
           </div>
@@ -99,7 +100,7 @@ export function Footer() {
 
         <div className="border-t border-background/10 mt-12 pt-8 text-center">
           <p className="text-background/50 text-sm">
-            © {new Date().getFullYear()} Parque Científico Tecnológico - Desarrollado Por Sitrans Villa Clara
+            © {new Date().getFullYear()} Parque Científico Tecnológico - Desarrollado Por Victor Manuel
           </p>
         </div>
       </div>

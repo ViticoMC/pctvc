@@ -7,7 +7,7 @@ import "./globals.css"
 import localFont from "next/font/local";
 import Logo from "@/components/logo";
 import { Navbar } from "@/components/navbar";
-import { Footer } from "react-day-picker";
+import { Footer } from "@/components/footer";
 
 const duneRise = localFont({
   src: [

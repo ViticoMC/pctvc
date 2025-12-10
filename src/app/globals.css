@@ -227,3 +227,11 @@ html {
   opacity: 1;
   animation: ping 1.5s infinite;
 }
+@keyframes vertical-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

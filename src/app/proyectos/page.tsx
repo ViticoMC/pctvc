@@ -177,9 +177,9 @@ function ProyectosSection() {
             defaultValue={proyectos[0].label}
           >
 
-            {tematicas.map((tematica) => (
-              <TabsTrigger key={tematica.label} value={tematica.label} className="w-full p-1 text-md">
-                {tematica.label}
+            {proyectos.map((pr) => (
+              <TabsTrigger key={pr.label} value={pr.label} className="w-full p-1 text-md cursor-pointer">
+                {pr.label}
               </TabsTrigger>
             ))}
           </TabsList>

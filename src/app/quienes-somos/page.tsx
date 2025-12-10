@@ -7,14 +7,16 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
 import { Target, Eye } from "lucide-react"
 import Historia from "@/components/historia"
+import Image from "next/image"
+import CarruselColaboradores from "@/components/carrusel-colaboradores"
 
 const accionistas = [
-  { name: "TECNOSIME", logo: "/tecnosime-logo.jpg" },
-  { name: "SICTE S.A.", logo: "/sicte-sa-logo.jpg" },
-  { name: "Planta Mecánica", logo: "/planta-mecanica-logo.jpg" },
-  { name: "Minerva", logo: "/minerva-logo.jpg" },
-  { name: "ERMP Villa Clara", logo: "/ermp-villa-clara-logo.jpg" },
-  { name: "CEDAI", logo: "/cedai-logo.jpg" },
+  { name: "TECNOSIME", logo: "/colaboradores/tecnosime.png", url: "https://www.tecnosime.cu/" },
+  { name: "SICTE S.A.", logo: "/colaboradores/sicte.png", url: "https://sicte.uclv.cu/" },
+  { name: "CEDAI", logo: "/colaboradores/cedai.png", url: "https://www.facebook.com/p/CEDAI-Empresa-de-Automatizaci%C3%B3n-Integral-100064048390294/?locale=es_LA" },
+  { name: "Minerva", logo: "/colaboradores/minerva.png", url: "https://www.facebook.com/empresaindustrialminerva/?locale=es_LA" },
+  { name: "ERMP Villa Clara", logo: "/colaboradores/ermp.png", url: "http://www.ermpvc.co.cu/" },
+  // { name: "CEDAI", logo: "/colaboradores/cedai-logo.png" },
 ]
 
 const directivos = [
@@ -119,22 +121,30 @@ function Accionistas() {
           Instituciones Colaboradoras
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+        <div className=" grid gap-6 "
+          style={{
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 200px), 1fr))"
+          }}
+        >
           {accionistas.map((accionista, index) => (
-            <div
+            <a
+              target="_blank"
+              href={accionista.url}
               key={accionista.name}
               className={cn(
-                "bg-background rounded-xl p-6 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1",
+                "bg-background h-40  rounded-xl p-3 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
               )}
-              style={{ transitionDelay: `${200 + index * 100}ms` }}
+            // style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
-              <img
+              <Image
+                width={200}
+                height={200}
                 src={accionista.logo || "/placeholder.svg"}
                 alt={accionista.name}
-                className="max-h-12 w-auto object-contain"
+                className=" w-auto object-cover"
               />
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -159,19 +169,22 @@ function Membresia() {
 
         <div
           className={cn(
-            "inline-block bg-muted rounded-2xl p-8 transition-all duration-700 delay-200",
+            "inline-block  rounded-2xl  p-8 transition-all duration-700 delay-200",
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95",
           )}
         >
-          <img src="/iasp-logo-international-association-science-parks.jpg" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
-          <p className="text-sm text-muted-foreground">
-            International Association of Science Parks
-            <br />
-            and Areas of Innovation
-          </p>
+          <img src="/colaboradores/iasp.png" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
+        </div>
+        <div
+          className={cn(
+            "inline-block  rounded-2xl p-8  transition-all duration-700 delay-200",
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95",
+          )}
+        >
+          <img src="/colaboradores/iasp-latam.png" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 
@@ -250,6 +263,7 @@ export default function QuienesSomosPage() {
       <PageHeader title="Quiénes Somos" />
       <MisionVision />
       <Historia />
+      {/* <CarruselColaboradores accionistas={accionistas} /> */}
       <Accionistas />
       <Membresia />
       <Stats />
