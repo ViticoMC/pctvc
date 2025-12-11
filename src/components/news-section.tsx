@@ -93,10 +93,10 @@ export function NewsSection() {
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground text-sm line-clamp-2">{item.descripcion}</p>
-                  <button className="mt-4 text-sm font-medium text-primary hover:text-accent transition-colors flex items-center gap-1 group/btn">
+                  <Link href={`/noticias/${item.id}`} className="mt-4 text-sm font-medium text-primary hover:text-accent transition-colors flex items-center gap-1 group/btn">
                     Leer más
                     <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>

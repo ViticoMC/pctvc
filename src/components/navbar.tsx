@@ -18,7 +18,7 @@ const navItems = [
       { name: "Eventos", href: "/eventos" },
       { name: "Noticias", href: "/noticias" },
       { name: "Galería", href: "/galeria" },
-      { name: "Contacto", href: "/contacto" },
+      // { name: "Contacto", href: "/contacto" },
     ]
   },
   // { name: "Proyectos", href: "/proyectos" },
@@ -41,7 +41,7 @@ const navItems = [
   // { name: "Galería", href: "/galeria" },
   // { name: "Eventos", href: "/eventos" },
   // { name: "Vinculación Academica", href: "/vinculacion-academica" },
-  // { name: "Contacto", href: "/contacto" },
+  { name: "Contacto", href: "/contacto" },
 ]
 
 export function Navbar() {

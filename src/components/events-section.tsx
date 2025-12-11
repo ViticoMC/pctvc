@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const events = [
   {
@@ -125,12 +126,12 @@ export function EventsSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <Link href="/eventos">
           <Button variant="outline" size="lg">
             <Calendar className="mr-2 h-5 w-5" />
             Ver Calendario Completo
           </Button>
-        </div>
+        </Link>
       </div>
     </section>
   )

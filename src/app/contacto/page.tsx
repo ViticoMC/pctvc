@@ -27,8 +27,8 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    title: "Teléfono",
-    details: ["+53 42 123456"],
+    title: "Teléfono Fijo",
+    details: ["+53 42281551", "Extensiones : 101-107"],
   },
   {
     icon: Clock,
