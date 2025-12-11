@@ -3,30 +3,10 @@
 import { useEffect, useRef, useState } from "react"
 import { ArrowRight, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { noticias } from "@/moock-data/noticias"
 
-const news = [
-  {
-    title: "Lanzamiento del Programa ConecTEC 2025",
-    excerpt: "El nuevo programa de aceleración conectará emprendedores cubanos con mentores internacionales.",
-    date: "28 Nov 2025",
-    category: "Programa",
-    image: "/startup-acceleration-program-tech-event.jpg",
-  },
-  {
-    title: "Alianza con Universidad Central",
-    excerpt: "Nueva colaboración para fortalecer la investigación y desarrollo tecnológico en la región.",
-    date: "25 Nov 2025",
-    category: "Alianzas",
-    image: "/university-partnership-signing.png",
-  },
-  {
-    title: "Aviso Importante: Nuevos Horarios",
-    excerpt: "Comunicamos los nuevos horarios de atención al público y servicios disponibles.",
-    date: "20 Nov 2025",
-    category: "Anuncio",
-    image: "/office-announcement-notification-board.jpg",
-  },
-]
+
 
 export function NewsSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -67,18 +47,23 @@ export function NewsSection() {
               Artículos tecnicos, entrevistas y noticias nacionales e internacionales
             </h2>
           </div>
-          <Button
-            variant="outline"
-            className={`group transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
+          <Link
+            href="/noticias"
           >
-            Ver Todas
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
+            <Button
+              variant="outline"
+              className={`cursor-pointer group transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+
+            >
+              Ver Todas
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {news.map((item, index) => (
+          {noticias.map((item, index) => (
             <article
               key={item.title}
               className={`group bg-card  rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-border ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -87,7 +72,7 @@ export function NewsSection() {
             >
               <div className="aspect-4/3 overflow-hidden">
                 <img
-                  src={item.image || "/placeholder.svg"}
+                  src={item.fotos?.[0] || "/placeholder.svg"}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -95,11 +80,11 @@ export function NewsSection() {
               <div className="p-6">
                 <div className="flex items-center gap-4 mb-4 ">
                   <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
-                    {item.category}
+                    {item.categoria}
                   </span>
                   <div className="flex items-center gap-1 text-muted-foreground text-sm">
                     <Calendar className="h-4 w-4" />
-                    {item.date}
+                    {item.fecha}
                   </div>
                 </div>
                 <div className="flex flex-col justify-between ">
@@ -107,7 +92,7 @@ export function NewsSection() {
                   <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-2">{item.excerpt}</p>
+                  <p className="text-muted-foreground text-sm line-clamp-2">{item.descripcion}</p>
                   <button className="mt-4 text-sm font-medium text-primary hover:text-accent transition-colors flex items-center gap-1 group/btn">
                     Leer más
                     <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />

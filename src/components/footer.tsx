@@ -1,4 +1,4 @@
-import { Facebook, Twitter, MapPin, Instagram } from "lucide-react"
+import { Facebook, icons, Instagram, Twitter, Youtube } from "lucide-react"
 import Link from "next/link"
 import Logo from "./logo"
 
@@ -16,6 +16,12 @@ const footerLinks = {
     { name: "GESIME", href: "https://www.sime.cu/" },
     { name: "CEDAI", href: "https://www.cedai.com.cu/" },
     { name: "CITMA", href: "https://www.citma.gob.cu/" },
+  ],
+  redes: [
+    { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61557233646236", icon: Facebook },
+    { name: "Instagram", href: "https://www.instagram.com/parquecientificotecnologico", icon: Instagram },
+    { name: "Twitter", href: "https://twitter.com/parquecienciotecnologico", icon: Twitter },
+    { name: "Youtube", href: "https://www.youtube.com/@ParqueCient%C3%ADficoTecnol%C3%B3gicoVC", icon: Youtube },
   ],
 }
 
@@ -40,18 +46,18 @@ export function Footer() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent transition-colors group"
-              >
-                <Facebook className="h-5 w-5 text-background/70 group-hover:text-accent-foreground" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent transition-colors group"
-              >
-                <Instagram className="h-5 w-5 text-background/70 group-hover:text-accent-foreground" />
-              </a>
+              {
+                footerLinks.redes.map((redes, index) => (
+                  <a
+                    target="_blank"
+                    key={index}
+                    href={redes.href}
+                    className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-accent transition-colors group"
+                  >
+                    <redes.icon className="h-5 w-5 text-background/70 group-hover:text-accent-foreground" />
+                  </a>
+                ))
+              }
             </div>
           </div>
 
@@ -85,11 +91,11 @@ export function Footer() {
             <h4 className="font-semibold text-lg mb-4">Ubicación</h4>
             <div className="rounded-lg overflow-hidden bg-background/10  flex items-center justify-center">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.5!2d-79.95!3d22.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDI1JzM0LjciTiA3OcKwNTcnMDAuMCJX!5e0!3m2!1ses!2scu!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3849.920824304149!2d-80.00750593398044!3d22.42787533379457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d52f00037eeb1f%3A0x7ed8b439cc08a984!2sParque%20cient%C3%ADfico%20tecnol%C3%B3gico%20villa%20clara!5e1!3m2!1ses!2sus!4v1765394813878!5m2!1ses!2sus"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
                 allowFullScreen
+                style={{ border: 0 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500"

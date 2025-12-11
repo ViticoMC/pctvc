@@ -10,8 +10,18 @@ import Logo from "./logo"
 
 const navItems = [
   { name: "Inicio", href: "/" },
-  { name: "Quiénes Somos", href: "/quienes-somos" },
-  { name: "Proyectos", href: "/proyectos" },
+  {
+    name: "Información",
+    href: "/quienes-somos",
+    submenu: [
+      { name: "Proyectos", href: "/proyectos" },
+      { name: "Eventos", href: "/eventos" },
+      { name: "Noticias", href: "/noticias" },
+      { name: "Galería", href: "/galeria" },
+      { name: "Contacto", href: "/contacto" },
+    ]
+  },
+  // { name: "Proyectos", href: "/proyectos" },
   {
     name: "Servicios",
     href: "/servicios",
@@ -21,11 +31,17 @@ const navItems = [
       { name: "Incubación de Empresas", href: "/incubacion-empresas" },
     ],
   },
-  { name: "Colaboración", href: "/colaboracion" },
-  { name: "Galería", href: "/galeria" },
-  { name: "Eventos", href: "/eventos" },
-  { name: "Vinculación Academica", href: "/vinculacion-academica" },
-  { name: "Contacto", href: "/contacto" },
+  {
+    name: "Colaboración", href: "/colaboracion",
+    submenu: [
+      { name: "Vinculación Academica", href: "/vinculacion-academica" },
+      // { name: "Colaboración", href: "/colaboracion" },
+    ]
+  },
+  // { name: "Galería", href: "/galeria" },
+  // { name: "Eventos", href: "/eventos" },
+  // { name: "Vinculación Academica", href: "/vinculacion-academica" },
+  // { name: "Contacto", href: "/contacto" },
 ]
 
 export function Navbar() {
@@ -84,7 +100,7 @@ export function Navbar() {
             {navItems.map((item) => (
               <div
                 key={item.name}
-                className="relative"
+                className="relative group"
                 onMouseEnter={() => item.submenu && setOpenSubmenu(item.name)}
                 onMouseLeave={() => setOpenSubmenu(null)}
               >
@@ -101,19 +117,21 @@ export function Navbar() {
                 </Link>
 
                 {item.submenu && openSubmenu === item.name && (
-                  <div className="absolute top-full left-0 mt-1 w-56 bg-background rounded-lg shadow-xl border border-border py-2 animate-in fade-in-0 slide-in-from-top-2">
-                    {item.submenu.map((subItem) => (
-                      <Link
-                        key={subItem.name}
-                        href={subItem.href}
-                        className={cn(
-                          "block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-accent transition-colors",
-                          pathname === subItem.href && "text-accent bg-muted",
-                        )}
-                      >
-                        {subItem.name}
-                      </Link>
-                    ))}
+                  <div className="absolute top-full left-0 pt-2 w-48">
+                    <div className="bg-background rounded-lg shadow-xl border border-border py-2 animate-in fade-in-0 slide-in-from-top-2">
+                      {item.submenu.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          href={subItem.href}
+                          className={cn(
+                            "block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-accent transition-colors",
+                            pathname === subItem.href && "text-accent bg-muted",
+                          )}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

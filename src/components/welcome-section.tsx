@@ -14,7 +14,7 @@ export function WelcomeSection() {
               data-usal="fade-r duration-500 delay-200"
 
             >
-              Un Espacio Diseñado para la <span className="text-primary">Innovación</span>
+              Parque <span className="text-blue-500">Científico Tecnológico</span> de Villa Clara
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6"
               data-usal="fade-r duration-500 delay-500"

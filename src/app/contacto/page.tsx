@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visita nuestra oficina",
-    details: ["Carretera a Planta Mecánica,", "Santa Clara, Villa Clara"],
+    details: ["Carretera a Planta Mecánica, No. 39 B, entrada a Almacenes Universales", "Municipio Santa Clara, Provincia Villa Clara, Cuba"],
   },
   {
     icon: Mail,
@@ -33,7 +33,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Horario",
-    details: ["Lunes - Viernes: 8:00 AM - 5:00 PM"],
+    details: ["Lunes - Jueves: 8:00 AM - 5:00 PM", "Viernes: 8:00 AM - 4:00 PM"],
   },
 ]
 
@@ -43,6 +43,7 @@ function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    console.log(e)
     setIsSubmitting(true)
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -178,12 +179,11 @@ function MapSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
           )}
         >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.5!2d-79.95!3d22.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDI1JzM0LjciTiA3OcKwNTcnMDAuMCJX!5e0!3m2!1ses!2scu!4v1234567890"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3849.920824304149!2d-80.00750593398044!3d22.42787533379457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d52f00037eeb1f%3A0x7ed8b439cc08a984!2sParque%20cient%C3%ADfico%20tecnol%C3%B3gico%20villa%20clara!5e1!3m2!1ses!2sus!4v1765394813878!5m2!1ses!2sus"
             width="100%"
             height="100%"
-            style={{ border: 0 }}
             allowFullScreen
+            style={{ border: 0 }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="grayscale hover:grayscale-0 transition-all duration-500"

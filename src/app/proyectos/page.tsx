@@ -7,6 +7,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ProjectCard from "@/components/project-card"
+import { useState } from "react"
 
 const stats = [
   { number: "28", label: "Proyectos", color: "text-accent" },
@@ -169,17 +170,19 @@ function ProyectosSection() {
 
         </div>
 
-        <Tabs>
+        <Tabs
+          defaultValue={proyectos[0].label}
+
+        >
           <TabsList className="w-full grid gap-2 h-auto "
             style={{
               gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 200px), 1fr))"
             }}
-            defaultValue={proyectos[0].label}
           >
 
-            {proyectos.map((pr) => (
-              <TabsTrigger key={pr.label} value={pr.label} className="w-full p-1 text-md cursor-pointer">
-                {pr.label}
+            {proyectos.map((proyecto) => (
+              <TabsTrigger key={proyecto.label} value={proyecto.label} className="w-full p-1 text-md cursor-pointer">
+                {proyecto.label}
               </TabsTrigger>
             ))}
           </TabsList>
