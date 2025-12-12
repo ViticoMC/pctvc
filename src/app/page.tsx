@@ -5,8 +5,6 @@ import { AdvantagesSection } from "@/components/advantages-section"
 import { NewsSection } from "@/components/news-section"
 import { EventsSection } from "@/components/events-section"
 import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
-import { Navbar } from "@/components/navbar"
 import { USALProvider } from '@usal/react';
 
 

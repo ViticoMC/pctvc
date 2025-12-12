@@ -1,29 +1,14 @@
-"use client"
 
 import { Evento } from "@/type/eventos";
-import Slider from "react-slick";
 import { Clock, MapPin } from "lucide-react";
 import PhotoSlider from "./photo-slider";
 
 interface Props {
     event: Evento;
     index: number;
-    isVisible: boolean;
 }
 
-export default function EventoCard({ event, index, isVisible }: Props) {
-    const sliderSettings = {
-        dots: event.fotos && event.fotos.length > 1,
-        infinite: event.fotos && event.fotos.length > 1,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: event.fotos && event.fotos.length > 1,
-        autoplaySpeed: 4000,
-        arrows: event.fotos && event.fotos.length > 1,
-        pauseOnHover: true,
-    };
-
+export default function EventoCard({ event, index }: Props) {
     return (
         <div
             key={event.id}
@@ -31,7 +16,6 @@ export default function EventoCard({ event, index, isVisible }: Props) {
         group bg-card rounded-2xl shadow-md border border-border
         hover:shadow-xl hover:border-accent/40
         transition-all duration-500
-        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
       `}
             style={{ transitionDelay: `${(index + 3) * 100}ms` }}
         >

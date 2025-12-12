@@ -17,7 +17,7 @@ export default function PhotoSlider({
     const defaultSettings = {
         dots: true,
         infinite: true,
-        speed: 400,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,

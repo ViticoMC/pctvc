@@ -14,7 +14,7 @@ export const noticias: Noticia[] = [
     enlace: [
       {
         title: "Entrevista en Opciones",
-        href: "https://www.opciones.com.hn/noticias/entrevista-exclusiva-con-msc-edelys-ada-saavedra-rodriguez-en-la-revista-opciones-de-la-feria-internacional-de-la-habana-fihav-2025/",
+        href: "https://www.juventudrebelde.cu/cuba/2025-11-27/conocimiento-e-innovacion-en-funcion-del-desarrollo",
       },
     ],
     multimedia: {

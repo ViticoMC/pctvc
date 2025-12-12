@@ -243,6 +243,7 @@ function AdvantageCard({
   return (
     <div
       className="group relative"
+      data-usal="zoomin duration-700 delay-200"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -394,10 +395,14 @@ export function AdvantagesSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-teal-700 font-semibold tracking-wider text-sm uppercase mb-4">
+          <p
+            data-usal="zoomin duration-500"
+            className="inline-block text-teal-700 font-semibold tracking-wider text-sm uppercase mb-4">
             ¿Por qué elegirnos?
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Principales Ventajas</h2>
+          </p>
+          <h2
+            data-usal="zoomin duration-500 delay-200"
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Principales Ventajas</h2>
           <div className="w-24 h-1 bg-linear-to-r from-teal-600 to-blue-600 mx-auto rounded-full" />
         </div>
 

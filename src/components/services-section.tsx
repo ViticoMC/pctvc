@@ -1,5 +1,4 @@
-// /components/ServicesSection.tsx
-// NOTA: esta versión es SSR (no "use client" y sin estados ni handlers JS).
+
 import { cn } from "@/lib/utils"
 
 function FinanciacionIcon() {

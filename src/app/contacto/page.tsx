@@ -14,7 +14,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { MapPin, Mail, Phone, Clock, Send } from "lucide-react"
 
-const contactInfo = [
+export const contactInfo = [
   {
     icon: MapPin,
     title: "Visita nuestra oficina",
