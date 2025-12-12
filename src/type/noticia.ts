@@ -6,5 +6,14 @@ export interface Noticia {
   fotos: string[] | null;
   descripcion: string;
   categoria: string;
-  enlace: string;
+  enlace: {
+    title: string;
+    href: string;
+  }[];
+  multimedia: {
+    videos: string[];
+    audios: string[];
+    imagenes: string[];
+    documents: string[];
+  };
 }

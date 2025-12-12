@@ -22,7 +22,7 @@ export default function PhotoSlider({
         slidesToScroll: 1,
         arrows: true,
         autoplay: fotos.length > 1,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1500,
         ...sliderSettings,
     };
 
@@ -36,7 +36,7 @@ export default function PhotoSlider({
                                 src={foto}
                                 alt={`Imagen ${index + 1}`}
                                 fill
-                                className="object-cover"
+                                className="object-scale-down"
                             />
                         </div>
                     ))}
@@ -47,7 +47,7 @@ export default function PhotoSlider({
                         src={fotos?.[0] || "/placeholder.png"}
                         alt="Imagen"
                         fill
-                        className="object-cover"
+                        className="object-scale-down"
                     />
                 ))}
         </div>

@@ -7,6 +7,7 @@ import { ArrowRight, Calendar, User, Search } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
 import { Noticia } from "@/type/noticia"
 import { noticias as mockNoticias } from "@/moock-data/noticias"
+import { BackButton } from "@/components/back-button"
 
 
 
@@ -121,6 +122,7 @@ export default function NoticiasPage() {
                     {/* Barra de búsqueda y filtros */}
                     <div className="mb-12 space-y-6">
                         {/* Búsqueda */}
+                        <BackButton />
                         <div className="relative">
                             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                             <input

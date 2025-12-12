@@ -1,6 +1,6 @@
 
 import { eventosData } from '@/moock-data/eventos';
-import { Noticia } from '@/type/eventos';
+import { Evento } from '@/type/eventos';
 import { BackButton } from '@/components/back-button';
 import { PageHeader } from '@/components/page-header';
 import Image from 'next/image';
@@ -27,8 +27,8 @@ export default async function EventoDetailsPage({
     params,
 }: EventoDetailsPageProps) {
     const { id } = await params;
-    const evento: Noticia | undefined = eventosData.find(
-        (item: Noticia) => item.id === parseInt(id)
+    const evento: Evento | undefined = eventosData.find(
+        (item: Evento) => item.id === parseInt(id)
     );
 
     if (!evento) {

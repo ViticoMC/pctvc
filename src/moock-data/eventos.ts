@@ -1,15 +1,15 @@
-import { Noticia } from "@/type/eventos";
+import { Evento } from "@/type/eventos";
 
-export const eventosData: Noticia[] = [
+export const eventosData: Evento[] = [
   {
-    id: 1,
-    title: "Conferencia de Innovación Tecnológica 2025",
+    id: 6,
+    title: "Hackathon: 48 Horas de Innovación",
     descripcion:
-      "Únete a nosotros en una conferencia magistral donde expertos de la industria compartirán las últimas tendencias en tecnología, inteligencia artificial y transformación digital. Se abordarán temas como cloud computing, cyberseguridad y desarrollo sostenible.\n\nPonentes destacados incluyen líderes de empresas tecnológicas internacionales que compartirán sus experiencias y visiones para el futuro del sector.",
-    fecha: "15/01/2025",
-    categoria: "Conferencia",
-    fotos: [],
-    direccion: "Centro de Convenciones, Avenida Principal 123",
+      "Participa en una competencia intensiva donde equipos de desarrolladores, diseñadores y emprendedores tendrán 48 horas para crear soluciones innovadoras a desafíos reales.\n\nPremios totales: $50,000 USD\n\n• Participación gratuita\n• Alojamiento y comidas incluidas\n• Acceso a mentores y expertos\n• Oportunidad de inversión para ganadores\n\nEquipos de 3-5 personas. Registro abierto hasta el 31 de enero.",
+    fecha: "22/02/2025",
+    categoria: "Competencia",
+    fotos: ["/slide/slide_1.jpg", "/slide/slide_2.jpg", "/slide/slide_3.jpg"],
+    direccion: "Parque Tecnológico Regional, Campus Completo",
   },
   {
     id: 2,
@@ -57,16 +57,7 @@ export const eventosData: Noticia[] = [
     ],
     direccion: "Instituto de Capacitación Profesional, Campus Principal",
   },
-  {
-    id: 6,
-    title: "Hackathon: 48 Horas de Innovación",
-    descripcion:
-      "Participa en una competencia intensiva donde equipos de desarrolladores, diseñadores y emprendedores tendrán 48 horas para crear soluciones innovadoras a desafíos reales.\n\nPremios totales: $50,000 USD\n\n• Participación gratuita\n• Alojamiento y comidas incluidas\n• Acceso a mentores y expertos\n• Oportunidad de inversión para ganadores\n\nEquipos de 3-5 personas. Registro abierto hasta el 31 de enero.",
-    fecha: "22/02/2025",
-    categoria: "Competencia",
-    fotos: ["/slide/slide_1.jpg", "/slide/slide_2.jpg", "/slide/slide_3.jpg"],
-    direccion: "Parque Tecnológico Regional, Campus Completo",
-  },
+
   {
     id: 7,
     title: "Reunión de Cooperadoras: Estrategia 2025",

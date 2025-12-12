@@ -1,4 +1,4 @@
-export interface Noticia {
+export interface Evento {
   id: number;
   title: string;
   fecha: string;

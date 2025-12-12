@@ -5,6 +5,7 @@ import { ArrowRight, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { noticias } from "@/moock-data/noticias"
+import PhotoSlider from "./photo-slider"
 
 
 
@@ -63,20 +64,14 @@ export function NewsSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {noticias.map((item, index) => (
+          {noticias.slice(0, 3).map((item, index) => (
             <article
               key={item.title}
               className={`group bg-card  rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-border ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               style={{ transitionDelay: `${(index + 3) * 100}ms` }}
             >
-              <div className="aspect-4/3 overflow-hidden">
-                <img
-                  src={item.fotos?.[0] || "/placeholder.svg"}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
+              <PhotoSlider fotos={item.fotos || []} />
               <div className="p-6">
                 <div className="flex items-center gap-4 mb-4 ">
                   <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
@@ -84,7 +79,7 @@ export function NewsSection() {
                   </span>
                   <div className="flex items-center gap-1 text-muted-foreground text-sm">
                     <Calendar className="h-4 w-4" />
-                    {item.fecha}
+                    <time>{new Date(item.fecha).toLocaleDateString('es-ES')}</time>
                   </div>
                 </div>
                 <div className="flex flex-col justify-between ">
