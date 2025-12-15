@@ -51,7 +51,7 @@ function ContactForm() {
   }
 
   return (
-    <section ref={ref} className="py-20 bg-background" id="contacto">
+    <section ref={ref} className="pt-26 pb-20 bg-background" id="contacto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
@@ -209,7 +209,7 @@ export default function ContactoPage() {
       {/* <Navbar /> */}
       <PageHeader
         title="Contacto"
-        subtitle="Si Tienes Alguna Pregunta, Comentario O Simplemente Quieres Saludar, No Dudes En Ponerte En Contacto Con Nosotros."
+      // subtitle="Si Tienes Alguna Pregunta, Comentario O Simplemente Quieres Saludar, No Dudes En Ponerte En Contacto Con Nosotros."
       />
       <ContactForm />
       <MapSection />

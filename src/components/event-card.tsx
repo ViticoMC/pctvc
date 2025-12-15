@@ -30,7 +30,7 @@ export default function EventoCard({ event, index }: Props) {
                 </span>
 
                 {/* TITLE */}
-                <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors truncate">
                     {event.title}
                 </h3>
 

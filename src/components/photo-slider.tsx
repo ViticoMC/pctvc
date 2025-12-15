@@ -17,12 +17,12 @@ export default function PhotoSlider({
     const defaultSettings = {
         dots: true,
         infinite: true,
-        speed: 1500,
+        speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
         autoplay: fotos.length > 1,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 2000,
         ...sliderSettings,
     };
 

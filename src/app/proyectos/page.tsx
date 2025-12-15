@@ -7,14 +7,15 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ProjectCard from "@/components/project-card"
-import { useState } from "react"
+import { USALProvider } from "@usal/react"
 
 const stats = [
-  { number: "28", label: "Proyectos", color: "text-accent" },
-  { number: "18", label: "Iniciados", color: "text-accent" },
-  { number: "5", label: "Terminados", color: "text-accent" },
-  { number: "5", label: "Otros", color: "text-accent" },
+  { number: "24", label: "Proyectos gestionados", color: "text-accent" },
+  { number: "21", label: "Empresariales", color: "text-accent" },
+  { number: "3", label: "Cooperación", color: "text-accent" },
+  { number: "9", label: "Innovación tecnológica", color: "text-accent" },
 ]
+
 
 const tematicas = [
   { label: "Ciencias" },
@@ -24,127 +25,162 @@ const tematicas = [
   { label: "Economia" },
 ]
 
-const proyectos = [{
-  label: "Ciencias",
-  content: [
-    {
-      title: "Edificio Inteligente I Etapa",
-      descripcion:
-        "Del inicio de la ingeniería conceptual para la construcción del edificio sede central del PCT con las más robustas y avanzadas TIC.",
-      estado: "En ejecución",
-      // icon: Building2,
-      fotos: [
-        "/ccrea-logo.jpg",
-        "/generic-university-logo.png",
-        "/cedai-logo.jpg",
-        "/pctvc-logo.jpg",
-      ],
-    },
-    {
-      title: "Producción de mini tubérculos de papa en ambiente controlado",
-      descripcion:
-        "Objetivo: Diseñar una instalación donde se realice una producción de semilla de papa en ambiente controlado.",
-      estado: "En ejecución",
-      fotos: ["/pctvc-logo.jpg"],
-    },
-  ]
-},
-{
-  label: "Tecnologias",
-  content: [
-    {
-      title: "Electrolinera Km 259 de la Autopista Nacional",
-      descripcion:
-        "Objetivo: Conformar el proyecto técnico ejecutivo de la infraestructura física destinada al uso inteligente para el PCT Villa Clara.",
-      estado: "En ejecución",
-      // icon: Zap,
-      fotos: [
-        "/pctvc-logo.jpg",
-        "/cedai-logo.jpg",
-        "/tecnosime-logo.jpg",
-        "/ccrea-logo.jpg",
-      ],
-    },
-    {
-      title: "Incubación de empresas y PDL - CAUSE SRL",
-      descripcion: "Misión: Producciones softítulo.",
-      estado: "En incubación",
-      // icon: Rocket,
-      fotos: ["/pctvc-logo.jpg"],
-    },
-    {
-      title: "Incubación de empresas y PDL - DEECHERI",
-      descripcion: "Misión: Producciones asociadas a turismo inteligente.",
-      estado: "En incubación",
-      // icon: Rocket,
-      fotos: ["/pctvc-logo.jpg"],
-    },
-  ]
-},
-{
-  label: "Arte",
-  content: [
-    {
-      title: "Producción de mini tubérculos de papa en ambiente controlado",
-      descripcion:
-        "Objetivo: Diseñar una instalación donde se realice una producción de semilla de papa en ambiente controlado.",
-      estado: "En ejecución",
-      // icon: Leaf,
-      fotos: ["/pctvc-logo.jpg"],
-    },
-  ]
-},
-{
-  label: "Educacion",
-  content: [
-    {
-      title: "Producción de mini tubérculos de papa en ambiente controlado",
-      descripcion:
-        "Objetivo: Diseñar una instalación donde se realice una producción de semilla de papa en ambiente controlado.",
-      estado: "En ejecución",
-      // icon: Leaf,
-      fotos: ["/pctvc-logo.jpg"],
-    },
-  ]
-},
-{
-  label: "Economia",
-  content: [
-    {
-      title: "Producción de mini tubérculos de papa en ambiente controlado",
-      descripcion:
-        "Objetivo: Diseñar una instalación donde se realice una producción de semilla de papa en ambiente controlado.",
-      estado: "En ejecución",
-      // icon: Leaf,
-      fotos: ["/pctvc-logo.jpg"],
-    },
-  ]
-}
+export const proyectos = [
+  {
+    label: "Fuentes renovables de energía",
+    content: [
+      {
+        title: "Sistemas fotovoltaicos híbridos – PDL Creación",
+        descripcion:
+          "Estudio, diseño, instalación y puesta en marcha de sistemas fotovoltaicos híbridos con acumulación e inyección a red.",
+        estado: "En ejecución",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+      {
+        title: "SFV con acumulación – UEB Brisas del Mar",
+        descripcion:
+          "Ingeniería básica, planificación ejecutiva, suministro y montaje de un sistema fotovoltaico con acumulación de energía (6 kW).",
+        estado: "En ejecución",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+      {
+        title: "SFV con acumulación – UEB Vista Hermosa",
+        descripcion:
+          "Ingeniería básica y ejecución de sistema fotovoltaico con acumulación de energía (10 kW).",
+        estado: "En ejecución",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+    ],
+  },
+  {
+    label: "Producción de alimentos",
+    content: [
+      {
+        title: "Granja automatizada de producción de alimentos",
+        descripcion:
+          "Ingeniería conceptual para el diseño y montaje de una granja automatizada de producción de huevos, porcicultura y centro de elaboración.",
+        estado: "En ejecución",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+      {
+        title: "Modernización agroindustrial – ONUDI",
+        descripcion:
+          "Programa de modernización tecnológica y empresarial del sector de agroquímicos y maquinaria agrícola (Fase II), financiado por la Federación de Rusia.",
+        estado: "Cooperación internacional",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+    ],
+  },
+  {
+    label: "Automatización e Inteligencia Artificial",
+    content: [
+      {
+        title: "Directorio de gestión de actores económicos",
+        descripcion:
+          "Sistema de información para la gestión y visualización de actores económicos.",
+        estado: "En desarrollo",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+      {
+        title: "Desarrollo de plataformas digitales",
+        descripcion:
+          "Diseño y desarrollo de páginas digitales para entidades y proyectos asociados al PCT.",
+        estado: "En ejecución",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+      {
+        title: "Edificio Inteligente – PCT Villa Clara",
+        descripcion:
+          "Proyecto técnico ejecutivo de la infraestructura básica de edificio inteligente del PCT Villa Clara.",
+        estado: "En ejecución",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+    ],
+  },
+  {
+    label: "Producción de materiales de la construcción",
+    content: [
+      {
+        title: "Bloque de arcilla – ADOBEMAN",
+        descripcion:
+          "Desarrollo de bloque de arcilla y otros materiales de la construcción en conjunto con la MIPYME ADOBEMAN.",
+        estado: "En incubación",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+    ],
+  },
+  {
+    label: "Incubación de nuevas empresas",
+    content: [
+      {
+        title: "MIPYME ADOBEMAN",
+        descripcion:
+          "Empresa dedicada a la producción de materiales de la construcción a base de arcilla y actividades asociadas a fuentes renovables de energía.",
+        estado: "Incubación",
+        fotos: ["/proyectos/adobeman.jpg"],
+      },
+      {
+        title: "PDL CREACIÓN",
+        descripcion:
+          "Proyecto de desarrollo local orientado a la producción de talabartería y proyectos de producción de alimentos con uso de energías renovables.",
+        estado: "Incubación",
+        fotos: ["/pctvc-logo.jpg"],
+      },
+      {
+        title: "PDL MERCAMAX",
+        descripcion:
+          "Producción y comercialización de productos de aseo e higiene e introducción de nuevas líneas productivas.",
+        estado: "Incubación",
+        fotos: [
+          "/proyectos/mercamax/mercamax1.webp",
+          "/proyectos/mercamax/mercamax2.jpg",
+          "/proyectos/mercamax/mercamax3.webp",
+          "/proyectos/mercamax/mercamax4.jpg",
+          "/proyectos/mercamax/mercamax5.jpg",
+          "/proyectos/mercamax/mercamax6.jpg",
+          "/proyectos/mercamax/mercamax7.jpg",
+          "/proyectos/mercamax/mercamax8.jpg",
+          "/proyectos/mercamax/mercamax9.jpg",
+          "/proyectos/mercamax/mercamax10.jpg",
+
+        ],
+      },
+    ],
+  },
 ]
+
+
+
 
 function StatsSection() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section ref={ref} className="py-4 text-background relative z-10">
-      <div className="max-w-7xl mx-auto ">
-        <div className="flex gap-4 justify-around p-3 rounded-3xl bg-linear-to-br from-primary via-primary/90 to-accent/80 ">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={cn(
-                "text-center transition-all duration-700",
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-              )}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="text-4xl sm:text-5xl font-bold  mb-2">{stat.number}</div>
-              <div className=" font-medium">{stat.label}</div>
-            </div>
-          ))}
+    <USALProvider>
+
+      <section ref={ref} className="py-4 text-background relative z-10">
+        <div className="max-w-7xl mx-auto ">
+          <div className="flex gap-4 justify-around p-3 rounded-3xl bg-linear-to-br from-primary via-primary/90 to-accent/80 ">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className={cn(
+                  "text-center transition-all duration-700",
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+                )}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className="text-4xl sm:text-5xl font-bold  mb-2"
+                  data-usal={`count-[${stat.number}] duration-2000`}
+                >{stat.number}</div>
+                <div className=" font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </USALProvider>
+
   )
 }
 
@@ -174,14 +210,14 @@ function ProyectosSection() {
           defaultValue={proyectos[0].label}
 
         >
-          <TabsList className="w-full grid gap-2 h-auto "
+          <TabsList className="w-full grid gap-2 h-auto p-2  "
             style={{
-              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 200px), 1fr))"
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 300px), 1fr))"
             }}
           >
 
             {proyectos.map((proyecto) => (
-              <TabsTrigger key={proyecto.label} value={proyecto.label} className="w-full p-1 text-md cursor-pointer">
+              <TabsTrigger key={proyecto.label} value={proyecto.label} className=" p-1 text-md cursor-pointer">
                 {proyecto.label}
               </TabsTrigger>
             ))}
@@ -207,7 +243,12 @@ export default function ProyectosPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* <Navbar /> */}
-      <PageHeader title="Proyectos" />
+      <PageHeader title="Proyectos"
+        subtitle="Los proyectos gestionados por el Parque Científico Tecnológico Villa Clara
+          se alinean con prioridades nacionales en ciencia, tecnología e innovación,
+          con impacto directo en sectores estratégicos de la economía."
+      />
+      {/* <ContextoProyectos /> */}
       <ProyectosSection />
       {/* <Footer /> */}
     </main>

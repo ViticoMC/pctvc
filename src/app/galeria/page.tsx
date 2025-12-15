@@ -12,60 +12,52 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
-import { Navbar } from "@/components/navbar"
-
-
 
 const fotosData = [
     {
-        src: "/images/asset1.jpg",
-        title: "Modern Interface",
-        descriptions: "A sleek and responsive UI designed for optimal user experience.",
+        src: "/slide/1.jpg",
+        title: "Portada del PCTVC",
+        descriptions: "Entrada al PCTVC",
     },
     {
-        src: "/images/asset2.jpg",
-        title: "High Performance",
-        descriptions: "Optimized for speed with efficient data loading and caching.",
+        src: "/slide/2.jpg",
+        title: "Reuniones de Cooperadoras",
+        descriptions: "Reuniones de cooperadoras",
     },
     {
-        src: "/images/asset3.jpg",
-        title: "Secure Access",
-        descriptions: "Advanced authentication mechanisms to keep user data protected.",
+        src: "/slide/3.jpg",
+        title: "Salón de recibimiento",
+        descriptions: "Interiores de la empresa",
     },
     {
-        src: "/images/asset4.jpg",
-        title: "Cloud Integration",
-        descriptions: "Seamless connectivity with cloud services for scalable workflows.",
+        src: "/noticias/embG3.jpg",
+        title: "Visita del embajador de Guyana ",
+        descriptions: "El embajador de Guyana visita Villa Clara",
     },
     {
-        src: "/images/asset5.jpg",
-        title: "Smart Analytics",
-        descriptions: "Real-time insights powered by dynamic data visualization tools.",
+        src: "/noticias/unidos.jpg",
+        title: "Unidos por el Futuro",
+        descriptions: "Visita el PCT Villa Clara Grecio Miguel Lorenzo Rodríguez , Coordinador del Proyecto “Resiliencia climática en ecosistemas agrícolas de Villa Clara (IRES)” y Laritza Torres Niebla ,Directora de Comercio Exterior ,Inversión Extranjera y Cooperación Internacional del Gobierno Provincial",
     },
     {
-        src: "/images/asset6.jpg",
-        title: "Mobile Ready",
-        descriptions: "Fully responsive layout crafted for all modern mobile devices.",
+        src: "/eventos/CCI1.jpg",
+        title: "CT Villa Clara en la V Convención Científica Internacional UCLV 2025",
+        descriptions: "CT Villa Clara en la V Convención Científica Internacional UCLV 2025",
     },
     {
-        src: "/images/asset7.jpg",
-        title: "Customizable Themes",
-        descriptions: "Multiple theme options to match your brand identity and style.",
+        src: "/eventos/feriaC2.jpg",
+        title: "Expoventa de Camajuaní",
+        descriptions: "Expoventa de Camajuaní",
     },
     {
-        src: "/images/asset8.jpg",
-        title: "API Connectivity",
-        descriptions: "Robust API support enabling third-party integrations effortlessly.",
+        src: "/eventos/innova1.jpg",
+        title: "El PCT Villa Clara en INNOVA",
+        descriptions: "El PCT Villa Clara en INNOVA",
     },
     {
-        src: "/images/asset9.jpg",
-        title: "Optimized Storage",
-        descriptions: "Efficient management of files and media with cloud support.",
-    },
-    {
-        src: "/images/asset10.jpg",
-        title: "Scalable Architecture",
-        descriptions: "Designed to grow with your application and increased traffic.",
+        src: "/eventos/feriaC4.jpg",
+        title: "Expoventa de Camajuaní",
+        descriptions: "Expoventa de Camajuaní",
     },
 ];
 
@@ -73,17 +65,17 @@ const fotosData = [
 const videosData = [
     {
         id: 1,
-        src: "/videos/video1.mp4",
-        poster: "/interview-directors-office.jpg",
-        titulo: "Entrevista a Directores",
+        src: "/videos/parque-presentacion.mp4",
+        // poster: "/interview-directors-office.jpg",
+        titulo: "Presentacion del Parque",
         fecha: "2024-06-01",
     },
     {
         id: 2,
-        src: "/videos/video2.mp4",
-        poster: "/project-presentation-stage.jpg",
-        titulo: "Presentación del Proyecto X",
-        fecha: "2024-06-15",
+        src: "/videos/parque-video-anual.mp4",
+        // poster: "/project-presentation-stage.jpg",
+        titulo: "Video anuel del PCTVC",
+        fecha: "2025-12-1",
     },
     {
         id: 3,
@@ -245,7 +237,7 @@ export default function MediaSection() {
                                 <div key={video.id} className="bg-white p-4 rounded-xl shadow">
                                     <video
                                         className="w-full rounded-xl"
-                                        poster={video.poster}
+                                        // poster={video.poster}
                                         controls
                                         preload="metadata"
                                     >

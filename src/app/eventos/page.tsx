@@ -220,11 +220,11 @@ export default function InteractiveCalendar() {
                             return (
                                 <div
                                     key={index}
-                                    className={`min-h-[120px] p-2 border-r border-b last:border-r-0 ${day ? "bg-background" : "bg-muted/20"
+                                    className={`min-h-[100px] border-2 p-2 ${events.length > 0 ? `border-l-4 border-l-green-500 bg-green-100 ` : ""} ${day ? "bg-background" : "bg-muted/20"
                                         }`}
                                 >
                                     {day && (
-                                        <div>
+                                        <div >
                                             <div className="w-8 h-8 flex items-center justify-center rounded-full font-semibold mb-2">
                                                 {day}
                                             </div>

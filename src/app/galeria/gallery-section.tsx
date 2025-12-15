@@ -167,7 +167,7 @@ export default function MediaSection() {
                                         />
                                     </div>
 
-                                    <div className="absolute bottom-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent text-white opacity-0 group-hover:opacity-100 transition">
+                                    <div className="absolute bottom-0 w-full p-3 bg-linear-to-t from-black/80 to-transparent text-white opacity-0 group-hover:opacity-100 transition">
                                         <p className="font-semibold text-sm">{foto.descriptions}</p>
                                         {/* <span className="text-xs opacity-80">{foto.fecha}</span> */}
                                     </div>

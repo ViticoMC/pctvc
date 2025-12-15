@@ -14,6 +14,7 @@ const navItems = [
     name: "Información",
     href: "/quienes-somos",
     submenu: [
+      { name: "Quienes Somos", href: "/quienes-somos" },
       { name: "Proyectos", href: "/proyectos" },
       { name: "Eventos", href: "/eventos" },
       { name: "Noticias", href: "/noticias" },

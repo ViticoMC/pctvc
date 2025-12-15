@@ -74,7 +74,7 @@ export const noticias: Noticia[] = [
     title:
       "Unidos por el Futuro: Colaboración en función del desarrollo territorial",
     descripcion:
-      "Visita  el PCT Villa Clara Grecio Miguel Lorenzo Rodríguez , Coordinador del Proyecto “Resiliencia climática en ecosistemas agrícolas de Villa Clara (IRES)”  y Laritza Torres Niebla ,Directora de Comercio Exterior ,Inversión Extranjera y Cooperación Internacional del Gobierno ProvincialSe evalúan en intercambio realizado las posibilidades de incorporación a proyectos internacionales  y a fondos de colaboración del proyecto IRES Juntos exploramos oportunidades que beneficiarán a nuestras comunidades",
+      "Visita  el PCT Villa Clara Grecio Miguel Lorenzo Rodríguez , Coordinador del Proyecto “Resiliencia climática en ecosistemas agrícolas de Villa Clara (IRES)”  y Laritza Torres Niebla ,Directora de Comercio Exterior ,Inversión Extranjera y Cooperación Internacional del Gobierno Provincial . Se evalúan en intercambio realizado las posibilidades de incorporación a proyectos internacionales  y a fondos de colaboración del proyecto IRES Juntos exploramos oportunidades que beneficiarán a nuestras comunidades",
     fecha: "20 Nov 2025",
     categoria: "Alianzas",
     fotos: ["/noticias/unidos.jpg"],

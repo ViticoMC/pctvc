@@ -6,6 +6,8 @@ import { PageHeader } from "@/components/page-header"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
 import { Check } from "lucide-react"
+import { ContactSection } from "@/components/contact-section"
+import { ServiciosCTA } from "@/components/call-action"
 
 const actividadesPrincipales = [
   "Asistencia para la formulación e implementación de proyectos de innovación; incluye la búsqueda de personal idóneo para la formación de equipos de proyecto.",
@@ -36,6 +38,109 @@ const actividadesSecundarias = [
   "Servicios gastronómicos y/o de alimentación a personas naturales y jurídicas que sean o no de la organización.",
   "Servicios inmobiliarios, limpieza, jardinería u otros que se demanden.",
 ]
+
+const serviciosEstrategicos = [
+  {
+    title: "Asesoría técnica y legal",
+    description:
+      "Acompañamiento integral a empresas de reciente creación o en proceso de incubación, orientado a la toma de decisiones técnicas, jurídicas y organizacionales.",
+  },
+  {
+    title: "Acceso a redes de inversionistas",
+    description:
+      "Vinculación con redes de inversionistas y actores estratégicos que facilitan el financiamiento y escalamiento de proyectos innovadores.",
+  },
+  {
+    title: "Arrendamiento de espacios tecnológicos",
+    description:
+      "Arrendamiento de espacios con servicios de conectividad, suministro eléctrico y condiciones adecuadas para el desarrollo empresarial y tecnológico.",
+  },
+]
+const serviciosTIC = [
+  "Desarrollo de sitios web.",
+  "Sistemas de información a la medida.",
+  "Implementación de técnicas y modelos de Inteligencia Artificial.",
+  "Ecosistemas inteligentes.",
+  "Formación y capacitación en sistemas de gestión de la información.",
+  "Formación y capacitación en IA para empresarios.",
+  "Gestión de plataformas ORM y ERP.",
+  "Análisis cienciométrico y estadístico.",
+  "Diseño y gestión de bases de datos.",
+  "Sistemas de información geográfica (SIG).",
+  "Computación gráfica.",
+  "Diseño de interfaces visuales Backend y Frontend.",
+  "Gestión de repositorios.",
+  "Web 3.0 y 4.0.",
+  "Análisis de datos.",
+  "Ciencia de datos.",
+]
+function ServiciosEstrategicosYTIC() {
+  const { ref, isVisible } = useScrollAnimation()
+
+  return (
+    <section ref={ref} className="py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          className={cn(
+            "text-3xl sm:text-4xl font-bold text-primary text-center mb-14 transition-all duration-700",
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+          )}
+        >
+          Servicios Estratégicos y Tecnológicos
+        </h2>
+
+        {/* Servicios estratégicos */}
+        <div className="grid gap-6 md:grid-cols-3 mb-16">
+          {serviciosEstrategicos.map((servicio, index) => (
+            <div
+              key={index}
+              className={cn(
+                "rounded-2xl border border-border bg-muted/40 p-6 transition-all duration-500 hover:shadow-lg hover:-translate-y-1",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
+              )}
+              style={{ transitionDelay: `${200 + index * 100}ms` }}
+            >
+              <h3 className="text-lg font-semibold text-primary mb-3">
+                {servicio.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {servicio.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Servicios TIC */}
+        <div className="rounded-3xl border border-border bg-muted/30 p-8">
+          <h3 className="text-2xl font-semibold text-primary mb-8 text-center">
+            Servicios vinculados a las Tecnologías de la Información y las Comunicaciones (TIC)
+          </h3>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {serviciosTIC.map((servicio, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "flex items-start gap-3 p-4 rounded-xl bg-background/70 transition-all duration-500",
+                  isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6",
+                )}
+                style={{ transitionDelay: `${300 + index * 40}ms` }}
+              >
+                <div className="mt-1 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                  <Check className="h-3.5 w-3.5 text-primary" />
+                </div>
+                <p className="text-sm text-foreground leading-relaxed">
+                  {servicio}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 
 function ActividadesPrincipales() {
   const { ref, isVisible } = useScrollAnimation()
@@ -114,14 +219,12 @@ function ActividadesSecundarias() {
 export default function ServiciosPage() {
   return (
     <main className="min-h-screen bg-background">
-      {/* <Navbar /> */}
-      <PageHeader
-        title="Servicios"
-      // subtitle="Pueden Ser Clientes Del PCT VC Las Empresas Cubanas Estatales Y Privadas, Empresas Extranjeras, Trabajadores Por Cuenta Propia Y Personas Naturales"
-      />
+      <PageHeader title="Servicios" />
       <ActividadesPrincipales />
+      <ServiciosEstrategicosYTIC />
       <ActividadesSecundarias />
-      {/* <Footer /> */}
+      <ServiciosCTA />
     </main>
   )
 }
+

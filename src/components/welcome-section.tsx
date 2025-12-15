@@ -45,7 +45,7 @@ export function WelcomeSection() {
             >
               <div className="aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/modern-technology-office-with-professionals-workin.jpg"
+                  src="/eventos/feriaC4.jpg"
                   alt="Centro de innovación"
                   className="w-full h-full object-cover"
                 />

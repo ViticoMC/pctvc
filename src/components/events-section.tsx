@@ -25,7 +25,7 @@ export function EventsSection() {
             data-usal="fade-up duration-700 delay-100"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground"
           >
-            Próximos Eventos
+            Eventos
           </h2>
 
           <p

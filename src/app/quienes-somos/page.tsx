@@ -169,22 +169,24 @@ function Membresia() {
           Membresía
         </h2>
 
-        <div
+        <a
           className={cn(
             "inline-block  rounded-2xl  p-8 transition-all duration-700 delay-200",
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95",
           )}
+          href="https://www.iasp.ws/"
+          target="_blank"
         >
           <img src="/colaboradores/iasp.png" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
-        </div>
-        <div
+        </a>
+        {/* <div
           className={cn(
             "inline-block  rounded-2xl p-8  transition-all duration-700 delay-200",
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95",
           )}
         >
           <img src="/colaboradores/iasp-latam.png" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
-        </div>
+        </div> */}
       </div>
     </section >
   )

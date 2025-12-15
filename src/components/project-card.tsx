@@ -2,6 +2,7 @@
 
 import Slider from "react-slick";
 import Image from "next/image";
+import PhotoSlider from "./photo-slider";
 
 interface ProjectCardProp {
     titulo: string,
@@ -26,29 +27,7 @@ export default function ProjectCard({ titulo, descripcion, estado, fotos }: Proj
         <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden w-full">
 
             {/* CABECERA CON SLIDER */}
-            <div className="w-full h-64 relative">
-                {fotos.length > 1 ? (
-                    <Slider {...sliderSettings} className="h-full">
-                        {fotos.map((foto, index) => (
-                            <div key={index} className="relative h-64">
-                                <Image
-                                    src={foto}
-                                    alt={`Imagen ${index + 1}`}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                        ))}
-                    </Slider>
-                ) : (
-                    <Image
-                        src={fotos[0]}
-                        alt="Imagen del proyecto"
-                        fill
-                        className="object-cover"
-                    />
-                )}
-            </div>
+            <PhotoSlider fotos={fotos} />
 
             {/* CONTENIDO */}
             <div className="p-6">

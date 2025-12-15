@@ -196,18 +196,26 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="py-24 bg-linear-to-b from-slate-50 to-background relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-      </div>
+    <section className="py-24 bg-transparent relative overflow-hidden lg:max-h-[80vh] min-h-[80vh] shadow-2xl">
+      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <Image
+          width="100"
+          height="100"
+          src="/soluciones-bg.jpg"
+          alt="Fondo"
+          className="min-w-screen min-h-screen"
+          style={{ animationDelay: "1s" }}
+          data-usal="fade-u duration-1000 delay-200"
+        />
+      </div> */}
+      {/* <div className="bg-linear-to-t from-white via-gray-200 to-transparent w-full h-20 absolute bottom-0" /> */}
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">Soluciones Integrales</h2>
+        <div className="flex justify-center w-full mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold p-2  rounded-2xl w-fit backdrop-blur-lg">Soluciones Integrales</h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.Icon
             return (
@@ -217,7 +225,7 @@ export function ServicesSection() {
                 data-usal={`zoomin duration-300 delay-${index * 200}`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className={cn("absolute inset-0 rounded-3xl blur-2xl transition-all duration-500", service.bgGlow, "opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-110")} />
+                <div className={cn("absolute inset-0 rounded-3xl blur-2xl transition-all duration-500", service.bgGlow, "opacity-70 scale-100 group-hover:opacity-100 group-hover:scale-110")} />
 
                 <div className={cn("relative flex flex-col items-center py-10 px-6 rounded-3xl bg-card/80 backdrop-blur-sm border border-border/50 transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:-translate-y-3 group-hover:border-transparent group-hover:bg-card")}>
                   <div className="mb-4">
