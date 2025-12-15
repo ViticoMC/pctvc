@@ -136,7 +136,7 @@ export default async function PaginaNoticias({ params }: { params: Promise<{ id:
                                             <div>
                                                 <h3 className="text-lg font-medium mb-2">Audios</h3>
                                                 <audio controls className="w-full">
-                                                    <source src={"http://localhost:3000/audios/" + noticia.multimedia.audios[0]} type="audio/mpeg" />
+                                                    <source src={"/audios/" + noticia.multimedia.audios[0]} type="audio/mpeg" />
                                                     Tu navegador no soporta el audio.
                                                 </audio>
                                             </div>
