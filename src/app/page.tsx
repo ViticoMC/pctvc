@@ -7,6 +7,8 @@ import { EventsSection } from "@/components/events-section"
 import { ContactSection } from "@/components/contact-section"
 import { USALProvider } from '@usal/react';
 import Image from "next/image"
+import { VentajasParque } from "@/components/ventajas-section"
+import ConvergenciaParque from "@/components/confluencia"
 
 
 export default function Home() {
@@ -16,6 +18,7 @@ export default function Home() {
         {/* <Navbar /> */}
         <HeroSection />
         <WelcomeSection />
+        <ConvergenciaParque />
         <ServicesSection />
         <div className="fixed -z-100 inset-0 overflow-hidden pointer-events-none h-screen w-screen">
           <Image
@@ -25,8 +28,8 @@ export default function Home() {
             className="min-w-screen min-h-screen"
           />
         </div>
-        <AdvantagesSection />
-
+        {/* <AdvantagesSection /> */}
+        <VentajasParque />
         <NewsSection />
         <EventsSection />
         <ContactSection />

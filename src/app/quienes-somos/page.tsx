@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils"
 import { Target, Eye } from "lucide-react"
 import Historia from "@/components/historia"
 import Image from "next/image"
-import CarruselColaboradores from "@/components/carrusel-colaboradores"
 
 const accionistas = [
   { name: "TECNOSIME", logo: "/colaboradores/tecnosime.png", url: "https://www.tecnosime.cu/" },
@@ -18,6 +17,7 @@ const accionistas = [
   { name: "ERMP Villa Clara", logo: "/colaboradores/ermp.png", url: "http://www.ermpvc.co.cu/" },
   { name: "Ministerio de Industrias", logo: "/colaboradores/mi.png", url: "https://www.mindus.gob.cu/es" },
   { name: "GESIME", logo: "/colaboradores/gesime.png", url: "https://www.sime.cu/" },
+  { name: "Planta Mecánica", logo: "/colaboradores/planta-mecanica.png", url: "https://www.plantamec.co.cu/" },
   // { name: "CEDAI", logo: "/colaboradores/cedai-logo.png" },
 ]
 
@@ -116,25 +116,25 @@ function Accionistas() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
           className={cn(
-            "text-3xl sm:text-4xl font-bold text-primary text-center mb-12 transition-all duration-700",
+            "text-3xl sm:text-4xl font-bold text-primary text-center mb-12 transition-all duration-700 ",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
           )}
         >
           Instituciones Colaboradoras
         </h2>
 
-        <div className=" grid gap-6 "
+        <div className=" grid gap-10 justify-center  "
           style={{
-            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 140px), 1fr))"
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 150px), 1fr))"
           }}
         >
-          {accionistas.map((accionista, index) => (
+          {accionistas.map((accionista) => (
             <a
               target="_blank"
               href={accionista.url}
               key={accionista.name}
               className={cn(
-                "bg-background h-36  rounded-xl p-3 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1",
+                "bg-background h-36 hover:opacity-65  rounded-xl p-3 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
               )}
             // style={{ transitionDelay: `${200 + index * 100}ms` }}

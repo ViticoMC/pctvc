@@ -17,7 +17,7 @@ export function WelcomeSection() {
               Parque <span className="text-blue-500">Científico Tecnológico</span> de Villa Clara
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6"
-              data-usal="fade-r duration-500 delay-500"
+              data-usal="fade-r duration-500 delay-300"
 
             >
               El Parque Científico Tecnológico de Villa Clara es un centro de innovación que promueve la colaboración
@@ -27,10 +27,10 @@ export function WelcomeSection() {
               conocimientos y tecnologías.
               Alianza Oportunidad y Desarrollo
             </p>
-            {/* <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               Nuestro compromiso es ser el puente entre la academia, la industria y el gobierno, facilitando la
               transferencia de conocimiento y tecnología que genere impacto positivo en la sociedad.
-            </p> */}
+            </p>
 
             {/* <div className="mt-10 flex items-center gap-6">
               <div className="w-16 h-1 bg-accent rounded-full" />
@@ -50,18 +50,6 @@ export function WelcomeSection() {
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-xl border border-border">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                    <span className="text-accent text-xl font-bold">✓</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">Certificación</div>
-                    <div className="text-sm text-muted-foreground">ISO 9001:2015</div>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>

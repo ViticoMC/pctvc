@@ -35,6 +35,7 @@ const navItems = [
   {
     name: "Colaboración", href: "/colaboracion",
     submenu: [
+      { name: "Colaboración", href: "/colaboracion" },
       { name: "Vinculación Academica", href: "/vinculacion-academica" },
       // { name: "Colaboración", href: "/colaboracion" },
     ]
