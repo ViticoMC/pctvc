@@ -1,4 +1,10 @@
-export const accionistas = [
+export interface Accionista {
+  name: string;
+  logo: string;
+  url: string;
+}
+
+export const accionistas: Accionista[] = [
   {
     name: "TECNOSIME",
     logo: "/colaboradores/tecnosime.png",

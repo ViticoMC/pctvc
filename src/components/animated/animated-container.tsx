@@ -8,12 +8,14 @@ interface AnimatedContainerProps {
     delay?: number;
     className?: string;
     etiqueta?: React.HTMLElementType
+    atributos?: any
 }
 
-export default function AnimatedContainer({ children, direction = "u", duration = 500, delay = 0, animation = "fade", className, etiqueta = "div" }: AnimatedContainerProps) {
+export default function AnimatedContainer({ children, atributos, direction = "u", duration = 500, delay = 0, animation = "fade", className, etiqueta = "div" }: AnimatedContainerProps) {
     const Container = etiqueta
     return (
         <Container className={className}
+            {...atributos}
             data-usal={`${animation}-${direction} duration-${duration} delay-${delay}  `}
         >
             {children}

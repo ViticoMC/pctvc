@@ -1,4 +1,4 @@
-import AnimatedContainer from "@/components/animated-container";
+import AnimatedContainer from "@/components/animated/animated-container";
 import { HeroElement } from "@/moock-data/quienes-somos/hero-elements";
 
 
@@ -13,7 +13,6 @@ export const HeroCard = ({
   const Icon = icon
   return (
     <AnimatedContainer
-      etiqueta="div"
       animation="zoomin"
       direction={direction}
       className={`bg-linear-to-br from-${color} to-${color}/80 rounded-2xl p-8 text-${color}-foreground `}
