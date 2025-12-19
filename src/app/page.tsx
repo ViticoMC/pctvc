@@ -1,14 +1,13 @@
-import { HeroSection } from "@/components/hero-section"
-import { WelcomeSection } from "@/components/welcome-section"
-import { ServicesSection } from "@/components/services-section"
-import { AdvantagesSection } from "@/components/advantages-section"
-import { NewsSection } from "@/components/news-section"
-import { EventsSection } from "@/components/events-section"
+import { HeroSection } from "@/components/home/hero-section"
+import { WelcomeSection } from "@/components/home/welcome-section"
+import { ServicesSection } from "@/components/home/services-section"
+import { NewsSection } from "@/components/home/news-section"
+import { EventsSection } from "@/components/home/events-section"
 import { ContactSection } from "@/components/contact-section"
 import { USALProvider } from '@usal/react';
 import Image from "next/image"
 import { VentajasParque } from "@/components/ventajas-section"
-import ConvergenciaParque from "@/components/confluencia"
+import ConvergenciaParque from "@/components/home/confluencia"
 
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
             className="min-w-screen min-h-screen"
           />
         </div>
-        {/* <AdvantagesSection /> */}
         <VentajasParque />
         <NewsSection />
         <EventsSection />

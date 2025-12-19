@@ -224,7 +224,7 @@ function AdvantageCard({ advantage, index }: any) {
   return (
     <div
       className="group relative"
-      data-usal={`fade slide-up duration-600 delay-${index * 150}`}
+      data-usal={`fade slide-up duration-600 delay-${index * 150}  once`}
     >
       <div
         className="relative bg-white rounded-2xl p-8 transition-all duration-500 group-hover:-translate-y-2 overflow-hidden"
@@ -343,19 +343,19 @@ export function AdvantagesSection() {
 
         <div className="text-center mb-16">
           <span className="inline-block text-teal-700 font-semibold tracking-wider text-sm uppercase mb-4"
-            data-usal="fade slide-up duration-600"
+            data-usal="fade slide-up duration-600  once"
           >
             ¿Por qué elegirnos?
           </span>
 
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
-            data-usal="fade slide-up duration-600 delay-100"
+            data-usal="fade slide-up duration-600 delay-100  once"
           >
             Principales Ventajas
           </h2>
 
           <div className="w-24 h-1 bg-linear-to-r from-teal-600 to-blue-600 mx-auto rounded-full"
-            data-usal="fade slide-up duration-600 delay-200"
+            data-usal="fade slide-up duration-600 delay-200  once"
           />
         </div>
 

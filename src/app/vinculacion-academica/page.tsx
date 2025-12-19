@@ -1,4 +1,4 @@
-import ComingSoonSection from '@/components/copming-soon'
+import ComingSoonSection from '@/components/coming-soon'
 
 export default function VinculacionAcademica() {
     return (

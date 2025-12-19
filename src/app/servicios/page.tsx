@@ -7,7 +7,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
 import { Check } from "lucide-react"
 import { ContactSection } from "@/components/contact-section"
-import { ServiciosCTA } from "@/components/call-action"
+import { ServiciosCTA } from "@/components/home/call-action"
 
 const actividadesPrincipales = [
   "Asistencia para la formulación e implementación de proyectos de innovación; incluye la búsqueda de personal idóneo para la formación de equipos de proyecto.",

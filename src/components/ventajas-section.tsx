@@ -5,7 +5,7 @@ export function VentajasParque() {
         <section className="w-full py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4">
                 <h2
-                    data-usal="zoomin duration-800"
+                    data-usal="zoomin duration-800  once"
                     className="text-3xl md:text-4xl font-semibold text-center text-slate-800 mb-14">
                     Principales ventajas competitivas del Parque
                 </h2>
@@ -16,7 +16,7 @@ export function VentajasParque() {
 
                         return (
                             <div
-                                data-usal="zoomin duration-800"
+                                data-usal="zoomin duration-800  once"
                                 key={ventaja.id}
                                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-8"
                             >

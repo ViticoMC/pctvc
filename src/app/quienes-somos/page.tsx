@@ -1,25 +1,20 @@
 "use client"
 
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+
 import { PageHeader } from "@/components/page-header"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
 import { Target, Eye } from "lucide-react"
 import Historia from "@/components/historia"
 import Image from "next/image"
+import StatsSection from "@/components/statts-section"
+import { accionistas } from "@/moock-data/accionistas"
+import AnimatedContainer from "@/components/animated-container"
+import { AnimatedDirection } from "@/type/animated-direction"
+import { heroElements } from "@/moock-data/quienes-somos/hero-elements"
+import { HeroCard } from "./hero-card"
 
-const accionistas = [
-  { name: "TECNOSIME", logo: "/colaboradores/tecnosime.png", url: "https://www.tecnosime.cu/" },
-  { name: "SICTE S.A.", logo: "/colaboradores/sicte.png", url: "https://sicte.uclv.cu/" },
-  { name: "CEDAI", logo: "/colaboradores/cedai.png", url: "https://www.facebook.com/p/CEDAI-Empresa-de-Automatizaci%C3%B3n-Integral-100064048390294/?locale=es_LA" },
-  { name: "Minerva", logo: "/colaboradores/minerva.png", url: "https://www.facebook.com/empresaindustrialminerva/?locale=es_LA" },
-  { name: "ERMP Villa Clara", logo: "/colaboradores/ermp.png", url: "http://www.ermpvc.co.cu/" },
-  { name: "Ministerio de Industrias", logo: "/colaboradores/mi.png", url: "https://www.mindus.gob.cu/es" },
-  { name: "GESIME", logo: "/colaboradores/gesime.png", url: "https://www.sime.cu/" },
-  { name: "Planta Mecánica", logo: "/colaboradores/planta-mecanica.png", url: "https://www.plantamec.co.cu/" },
-  // { name: "CEDAI", logo: "/colaboradores/cedai-logo.png" },
-]
+
 
 const directivos = [
   {
@@ -46,62 +41,24 @@ const stats = [
   { number: "5", label: "Otros" },
 ]
 
+
+
+
+
+
 function MisionVision() {
-  const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section ref={ref} className="py-20 bg-background">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* <div
-          className={cn(
-            "mb-12 transition-all duration-700",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-          )}
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Qué Hacemos</h2>
-          <p className="text-muted-foreground max-w-3xl">
-            Ofrecemos Servicios A Clientes Del PCT VC Las Empresas Cubanas Estatales Y Privadas, Empresas Extranjeras,
-            Trabajadores Por Cuenta Propia Y Personas Naturales (Incluyendo Estudiantes Y Jóvenes Emprendedores).
-          </p>
-        </div> */}
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div
-            className={cn(
-              "bg-linear-to-br from-primary to-primary/80 rounded-2xl p-8 text-primary-foreground transition-all duration-700 delay-200",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-            )}
-          >
-            <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-6">
-              <Target className="h-7 w-7 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">MISIÓN</h3>
-            <p className="text-white/90 leading-relaxed">
-              Contribuir al desarrollo industrial, participando y coadyuvando a la creación, implantación,
-              funcionamiento, fortalecimiento , lanzamiento de nuevas entidades (productos nuevos  o mejorados y empresas),
-              adoptando sistemas de gestion integrada que incrementen el fondo de bienes exportables y la sustitucion de
-              importaciones en armonía con el medio ambiente
+          {
+            heroElements.map((heroElement, index) => (
+              <HeroCard key={index} {...heroElement} />
+            ))
+          }
 
-            </p>
-          </div>
-
-          <div
-            className={cn(
-              "bg-linear-to-br from-accent to-accent/80 rounded-2xl p-8 text-accent-foreground transition-all duration-700 delay-300",
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-            )}
-          >
-            <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-6">
-              <Eye className="h-7 w-7 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">VISIÓN</h3>
-            <p className="text-white/90 leading-relaxed">
-              Ser un referente de ecosistema de innovación y transferencia científica en la rama de las industria ,
-              con un minimo viable de industria 4.0 , para promover, la generación y sostenibilidad de nuevas y exigentes
-              empresas , proporcionando productos y servicios de alto valor agregado y un sistema de gestión alineado
-              a la Política de Desarrollo Industrial.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -109,19 +66,16 @@ function MisionVision() {
 }
 
 function Accionistas() {
-  const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section ref={ref} className="py-20 bg-muted">
+    <section className="py-20 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          className={cn(
-            "text-3xl sm:text-4xl font-bold text-primary text-center mb-12 transition-all duration-700 ",
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-          )}
-        >
+        <AnimatedContainer
+          etiqueta="h1"
+          duration={300}
+          className="text-3xl sm:text-4xl font-bold text-primary text-center mb-12">
           Instituciones Colaboradoras
-        </h2>
+        </AnimatedContainer>
 
         <div className=" grid gap-10 justify-center  "
           style={{
@@ -133,10 +87,8 @@ function Accionistas() {
               target="_blank"
               href={accionista.url}
               key={accionista.name}
-              className={cn(
-                "bg-background h-36 hover:opacity-65  rounded-xl p-3 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1",
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-              )}
+              className=
+              "bg-background h-36 hover:opacity-65  rounded-xl p-3 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1"
             // style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <Image
@@ -179,44 +131,11 @@ function Membresia() {
         >
           <img src="/colaboradores/iasp.png" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
         </a>
-        {/* <div
-          className={cn(
-            "inline-block  rounded-2xl p-8  transition-all duration-700 delay-200",
-            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95",
-          )}
-        >
-          <img src="/colaboradores/iasp-latam.png" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
-        </div> */}
       </div>
     </section >
   )
 }
 
-function Stats() {
-  const { ref, isVisible } = useScrollAnimation()
-
-  return (
-    <section ref={ref} className="py-16 bg-gradient-to-r from-primary to-accent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={cn(
-                "text-center transition-all duration-700",
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-              )}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="text-5xl sm:text-6xl font-bold text-white mb-2">{stat.number}</div>
-              <div className="text-white/80 font-medium">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function JuntaDirectiva() {
   const { ref, isVisible } = useScrollAnimation()
@@ -270,7 +189,7 @@ export default function QuienesSomosPage() {
       {/* <CarruselColaboradores accionistas={accionistas} /> */}
       <Accionistas />
       <Membresia />
-      <Stats />
+      <StatsSection stats={stats} />
       <JuntaDirectiva />
       {/* <Footer /> */}
     </main>

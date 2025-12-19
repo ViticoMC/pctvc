@@ -15,24 +15,24 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-16">
 
           {/* Left Content */}
-          <div data-usal="fade slide-left duration-600">
+          <div data-usal="fade slide-left duration-600  once">
             <span
               className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4"
-              data-usal="fade-r duration-600"
+              data-usal="fade-r duration-600  once"
             >
               Contáctanos
             </span>
 
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight"
-              data-usal="fade-r duration-600 delay-100"
+              data-usal="fade-r duration-600 delay-100  once"
             >
               ¿Listo para Innovar?
             </h2>
 
             <p
               className="text-primary-foreground/80 text-lg mb-10 leading-relaxed"
-              data-usal="fade-r duration-600 delay-200"
+              data-usal="fade-r duration-600 delay-200  once"
             >
               Estamos aquí para ayudarte a convertir tus ideas en realidad. Contáctanos y descubre cómo podemos impulsar tu proyecto.
             </p>
@@ -42,7 +42,7 @@ export function ContactSection() {
 
               <div
                 className="flex items-center gap-4"
-                data-usal="fade-r duration-600 delay-300"
+                data-usal="fade-r duration-600 delay-300  once"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
                   <Mail className="h-5 w-5 text-accent" />
@@ -56,7 +56,7 @@ export function ContactSection() {
 
               <div
                 className="flex items-center gap-4"
-                data-usal="fade-r duration-600 delay-400"
+                data-usal="fade-r duration-600 delay-400  once"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
                   <Phone className="h-5 w-5 text-accent" />
@@ -71,7 +71,7 @@ export function ContactSection() {
 
               <div
                 className="flex items-center gap-4"
-                data-usal="fade-r duration-600 delay-500"
+                data-usal="fade-r duration-600 delay-500  once"
               >
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
                   <MapPin className="h-5 w-5 text-accent" />
@@ -91,7 +91,7 @@ export function ContactSection() {
 
           {/* Right Side: Form */}
           <div
-            data-usal="fade-l duration-900 delay-400"
+            data-usal="fade-l duration-900 delay-400  once"
           >
             <div className="bg-card rounded-2xl p-8 shadow-2xl">
               <h3 className="text-xl font-semibold text-foreground mb-6">Envíanos un Mensaje</h3>

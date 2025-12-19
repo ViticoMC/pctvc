@@ -3,7 +3,7 @@ import { ArrowRight, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { noticias } from "@/moock-data/noticias"
-import PhotoSlider from "./photo-slider"
+import PhotoSlider from "@/components/photo-slider"
 
 
 
@@ -14,13 +14,13 @@ export function NewsSection() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-16">
           <div>
             <p
-              data-usal="zoomin duration-700"
+              data-usal="zoomin duration-700  once"
               className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4"
             >
               Mantente Informado
             </p>
             <h2
-              data-usal="fade-r duration-700 delay-200"
+              data-usal="fade-r duration-700 delay-200  once"
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground  "
             >
               Artículos tecnicos, entrevistas y noticias nacionales e internacionales
@@ -28,7 +28,7 @@ export function NewsSection() {
           </div>
           <Link
             href="/noticias"
-            data-usal="flip-r  duration-500"
+            data-usal="flip-r  duration-500  once"
           >
             <Button
               variant="outline"
@@ -44,7 +44,7 @@ export function NewsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {noticias.slice(0, 3).map((item, index) => (
             <article
-              data-usal={`zoomin duration-700 delay-${index * 200}`}
+              data-usal={`zoomin duration-700 delay-${index * 200}  once`}
               key={item.title}
               className="group bg-card  rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-border "
             >

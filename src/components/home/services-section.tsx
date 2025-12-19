@@ -222,7 +222,7 @@ export function ServicesSection() {
               <div
                 key={service.id}
                 className={cn("relative group cursor-pointer transition-all duration-700 ease-out")}
-                data-usal={`zoomin duration-300 delay-${index * 200}`}
+                data-usal={`zoomin duration-300 delay-${index * 200}  once`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className={cn("absolute inset-0 rounded-3xl blur-2xl transition-all duration-500", service.bgGlow, "opacity-70 scale-100 group-hover:opacity-100 group-hover:scale-110")} />

@@ -8,22 +8,12 @@ import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ProjectCard from "@/components/project-card"
 import { USALProvider } from "@usal/react"
-
-const stats = [
-  { number: "24", label: "Proyectos gestionados", color: "text-accent" },
-  { number: "21", label: "Empresariales", color: "text-accent" },
-  { number: "3", label: "Cooperación", color: "text-accent" },
-  { number: "9", label: "Innovación tecnológica", color: "text-accent" },
-]
+import StatsSection from "@/components/statts-section"
+import { stats } from "@/moock-data/stats"
 
 
-const tematicas = [
-  { label: "Ciencias" },
-  { label: "Tecnologias" },
-  { label: "Arte" },
-  { label: "Educacion" },
-  { label: "Economia" },
-]
+
+
 
 export const proyectos = [
   {
@@ -152,38 +142,6 @@ export const proyectos = [
 
 
 
-function StatsSection() {
-  const { ref, isVisible } = useScrollAnimation()
-
-  return (
-    <USALProvider>
-
-      <section ref={ref} className="py-4 text-background relative z-10">
-        <div className="max-w-7xl mx-auto ">
-          <div className="flex gap-4 justify-around p-3 rounded-3xl bg-linear-to-br from-primary via-primary/90 to-accent/80 ">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className={cn(
-                  "text-center transition-all duration-700",
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-                )}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="text-4xl sm:text-5xl font-bold  mb-2"
-                  data-usal={`count-[${stat.number}] duration-2000`}
-                >{stat.number}</div>
-                <div className=" font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </USALProvider>
-
-  )
-}
-
 function ProyectosSection() {
   const { ref, isVisible } = useScrollAnimation()
 
@@ -196,7 +154,7 @@ function ProyectosSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
           )}
         >
-          <StatsSection />
+          <StatsSection stats={stats} />
           {/* <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">PROYECTOS</h2> */}
           <div className="flex items-center justify-center gap-2">
             <div className="w-2 h-2 rounded-full bg-accent"></div>

@@ -3,7 +3,7 @@
 import { Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import EventoCard from "./event-card"
+import EventoCard from "../event-card"
 import { eventosData } from "@/moock-data/eventos"
 
 export function EventsSection() {
@@ -15,21 +15,21 @@ export function EventsSection() {
         <div className="text-center mb-16">
 
           <span
-            data-usal="fade-up duration-700"
+            data-usal="fade-up duration-700  once"
             className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4"
           >
             Agenda
           </span>
 
           <h2
-            data-usal="fade-up duration-700 delay-100"
+            data-usal="fade-up duration-700 delay-100  once"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground"
           >
             Eventos
           </h2>
 
           <p
-            data-usal="fade-up duration-700 delay-200"
+            data-usal="fade-up duration-700 delay-200  once"
             className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto"
           >
             Participa en nuestras actividades y conecta con la comunidad
@@ -41,7 +41,7 @@ export function EventsSection() {
           {eventosData.slice(0, 3).map((event, index) => (
             <div
               key={event.title}
-              data-usal={` zoomin duration-700 delay-${index * 150}`}
+              data-usal={` zoomin duration-700 delay-${index * 150}  once`}
             >
               <EventoCard event={event} index={index} />
             </div>
@@ -51,7 +51,7 @@ export function EventsSection() {
         {/* Button */}
         <div
           className="w-full flex justify-center m-3"
-          data-usal="fade slide-up duration-700 delay-300"
+          data-usal="fade slide-up duration-700 delay-300  once"
         >
           <Link href="/eventos">
             <Button variant="outline" size="lg">

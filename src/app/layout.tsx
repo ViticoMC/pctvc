@@ -8,6 +8,7 @@ import localFont from "next/font/local";
 import Logo from "@/components/logo";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { USALProvider } from "@usal/react";
 
 // Lato - Fuente por defecto
 const lato = localFont({
@@ -105,13 +106,16 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${lato.variable} ${duneRise.variable} antialiased relative`}>
-        <Navbar />
-        {children}
-        <Footer />
-        <Analytics />
-        {/* <div className="fixed z-100 top-2 left-2 p-1 rounded-lg ">
+        <USALProvider>
+
+          <Navbar />
+          {children}
+          <Footer />
+          <Analytics />
+          {/* <div className="fixed z-100 top-2 left-2 p-1 rounded-lg ">
           <Logo width={200} height={200} />
         </div> */}
+        </USALProvider>
       </body>
     </html>
   )

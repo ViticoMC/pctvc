@@ -41,10 +41,10 @@ export default function ConvergenciaParque() {
 
                             {/* Centro */}
                             <motion.div initial={{ scale: 0.8, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative flex flex-col items-center z-10">
+                                <p className="mt-4  font-medium text-center">Parque Tecnológico</p>
                                 <motion.div animate={{ boxShadow: hovered ? "0 0 40px rgba(16,185,129,0.6)" : "0 0 0 rgba(0,0,0,0)" }} className="relative w-36 h-36 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center">
                                     <svg className="w-16 h-16 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M4 21V7l8-4 8 4v14" /></svg>
                                 </motion.div>
-                                <p className="mt-4  font-medium">Parque Tecnológico</p>
                             </motion.div>
 
                             {/* Universidad */}

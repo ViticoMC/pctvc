@@ -100,7 +100,7 @@ export function HeroSection() {
                 ))}
               </div>
               <div
-                data-usal="fade-u split-letter split-delay-50"
+                data-usal="fade-u split-letter split-delay-50  once"
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 md:px-10 px-4 md:py-4 py-2 bg-black/40 backdrop-blur-md rounded-3xl text-center text-white text-2xl md:text-3xl font-semibold tracking-wide">
                 Alianza , Oportunidad y Desarrollo.
               </div>
