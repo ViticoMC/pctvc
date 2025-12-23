@@ -9,7 +9,6 @@ import Image from "next/image"
 import { VentajasParque } from "@/components/ventajas-section"
 import ConvergenciaParque from "@/components/home/confluencia"
 
-
 export default function Home() {
   return (
     <USALProvider>
