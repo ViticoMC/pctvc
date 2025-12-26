@@ -3,18 +3,18 @@ import { Evento } from "@/type/eventos";
 export const eventosData: Evento[] = [
   {
     id: 1,
-    title: "Expocaribe2025",
+    title: "FIHAV 2025",
     descripcion:
-      "PCT Villa Clara comparte su experiencia en #Expocaribe2025: Ciencia e innovación para impulsar las exportaciones cubanas En la jornada de hoy, como parte de la Feria Expocaribe en su XX Edición, tuvo lugar : Fórum de inversión dedicado al desarrollo territorial con la presentación de la cartera de oportunidades de Occidente, Centro y Oriente y una mirada desde lo territorial a la inversión extranjera directa en Cuba.Inauguración del evento Hecho en Cuba. Se presenta  la oferta exportable de Cuba y el Mapa de Exportaciones. Culmina con un panel de encadenamiento productivo en la industria con una mirada desde la ciencia a los procesos de Comercio Exterior. El PCT Villa Clara presenta su experiencia a los asistentes al evento.",
+      "El Parque Científico Tecnológico de Villa Clara (PCT Villa Clara) ya está presente  en FIHAV 2025. Nuestro equipo inmerso en la jornada de montaje del stand, que promete ser un punto de encuentro para la innovación. Nos encuentras en: Pabellón 2, primer piso y mezzanine, Stand de Villa Clara. ¿Qué representamos en esta edición?En FIHAV 2025  el PCT Villa Clara trae proyectos de alto impacto: Representamos a GESIME, nuestro patrocinador, con un ecosistema de MIPYMES en incubación, que inicia con un proyecto estratégico junto a la Empresa Minerva. En el 2do piso, presentamos un Proyecto de Incubación del Gobierno sobre Movilidad, ejecutado por una MIPYME. Nuestro objetivo es conectar a esta entidad con la Empresa Minerva para crear sinergias a partir de un modelo de negocios sólido.Además, exhibiremos las principales muestras culturales de nuestra provincia.Estén atentos a nuestras actualizaciones. ¡Les mantendremos al tanto de todo nuestro programa y participación en la feria!",
     fecha: "28/11/2025",
     categoria: "Innovación",
     fotos: [
-      "/eventos/expo1.jpg",
-      "/eventos/expo2.jpg",
-      "/eventos/expo3.jpg",
-      "/eventos/expo4.jpg",
-      "/eventos/expo5.jpg",
-      "/eventos/expo6.jpg",
+      "/eventos/fih1.jpg",
+      "/eventos/fih2.jpg",
+      "/eventos/fih3.jpg",
+      "/eventos/fih4.jpg",
+      "/eventos/fih5.jpg",
+      "/eventos/fih6.jpg",
     ],
     direccion: "La Habana, Cuba",
   },

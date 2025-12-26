@@ -5,49 +5,6 @@ import { Noticia } from "@/type/noticia";
 // audios y muchos otros que sean de interes para el usuario
 export const noticias: Noticia[] = [
   {
-    title:
-      " Parque Científico Tecnológico de Villa CLara y sus claves de exito",
-    descripcion:
-      "Buenas tardes . Hoy cerramos una jornada llena de logros y aprendizajes para el PCT Villa Clara en el marco de la XLI Feria Internacional de La Habana (FIHAV 2025). Queremos compartir con ustedes dos noticias de gran interés: Entrevista exclusiva en la revista Opciones No te pierdas la entrevista publicada en el diario de la feria a nuestra presidenta, MSc. Edelys Ada Saavedra Rodriguez, donde profundiza en los orígenes, misión, proyecciones y principales retos de nuestra empresa. ¡Una lectura imprescindible para conocer más sobre nuestro trabajo y visión! ",
-    fecha: "27 Nov 2025",
-    categoria: "Programa",
-    fotos: ["/noticias/entrevista-revista-opciones.jpg"],
-    enlace: [
-      {
-        title: "Entrevista en Opciones",
-        href: "https://www.juventudrebelde.cu/cuba/2025-11-27/conocimiento-e-innovacion-en-funcion-del-desarrollo",
-      },
-    ],
-    multimedia: {
-      imagenes: [],
-      videos: [],
-      audios: ["entrevista-opciones.mp3"],
-      documents: [],
-    },
-    id: 1,
-  },
-  {
-    title: "Avanzamos en Ciencia y Tecnología",
-    descripcion:
-      "El pasado jueves 9 de enero, en la sede del Gobierno Provincial, se llevó a cabo un importante balance de los órganos asesores, incluyendo el Polo Científico Productivo (PCP), el Consejo Provincial de las Ciencias Sociales y Humanísticas, y el Consejo Asesor del Territorio.  Durante este encuentro, nuestra presidenta, Edelys Ada Saavedra Rodríguez, destacó la importancia de la articulación del Parque Científico Tecnológico de Villa Clara con el sistema empresarial y el Gobierno, para desarrollar la economía. Además, nos enorgullece haber recibido, junto a otras instituciones, un reconocimiento por el trabajo realizado. ",
-    fecha: "9 Jan 2025",
-    categoria: "Alianzas",
-    fotos: ["/noticias/avanza-cienc-tecno.jpg"],
-    enlace: [
-      {
-        title: "Artículo del periodista Ricardo Rodolfo González:",
-        href: "https://www.conectec.org/",
-      },
-    ],
-    multimedia: {
-      imagenes: [],
-      videos: [],
-      audios: [],
-      documents: [],
-    },
-    id: 2,
-  },
-  {
     title: "Visita del Embajador de Guyana a Villa Clara",
     descripcion:
       "El pasado jueves y viernes, recibimos al Excelentísimo Señor Abdool Halim Majeed, embajador de Guyana en Cuba. Durante su visita lo acompañaron funcionarios del gobierno, la Dirección de Comercio Exterior del Gobierno Provincial, la Cámara de Comercio de Villa Clara y el Parque Científico Tecnológico.Su programa de actividades incluyó un fructífero intercambio en el Gobierno Provincial, donde el Parque Científico Tecnológico de Villa Clara participó activamente junto a instituciones y empresas del gobierno.El embajador también visitó las empresas INPUD y Minerva, evaluando oportunidades de colaboración, y sostuvo un contacto con diversas Mypimes, fortaleciendo la innovación y relaciones comerciales. En febrero, celebraremos el aniversario de la Independencia de Guyana en Villa Clara, donde nuestro Parque será ",
@@ -72,6 +29,70 @@ export const noticias: Noticia[] = [
     id: 3,
   },
   {
+    title: "Avanzamos en Ciencia y Tecnología",
+    descripcion:
+      "El pasado jueves 9 de enero, en la sede del Gobierno Provincial, se llevó a cabo un importante balance de los órganos asesores, incluyendo el Polo Científico Productivo (PCP), el Consejo Provincial de las Ciencias Sociales y Humanísticas, y el Consejo Asesor del Territorio.  Durante este encuentro, nuestra presidenta, Edelys Ada Saavedra Rodríguez, destacó la importancia de la articulación del Parque Científico Tecnológico de Villa Clara con el sistema empresarial y el Gobierno, para desarrollar la economía. Además, nos enorgullece haber recibido, junto a otras instituciones, un reconocimiento por el trabajo realizado. ",
+    fecha: "9 Jan 2025",
+    categoria: "Alianzas",
+    fotos: ["/noticias/avanza-cienc-tecno.jpg"],
+    enlace: [
+      {
+        title: "Artículo del periodista Ricardo Rodolfo González:",
+        href: "https://www.conectec.org/",
+      },
+    ],
+    multimedia: {
+      imagenes: [],
+      videos: [],
+      audios: [],
+      documents: [],
+    },
+    id: 2,
+  },
+  {
+    title: "Fortaleciendo la cooperación Internacional",
+    descripcion: `Fue un honor recibir en el Parque Científico Tecnológico de Villa Clara la visita de Su Excelencia, el Sr. Viktor V. Koronelli, Embajador Extraordinario y Plenipotenciario de la Federación de Rusia en Cuba.Durante un fructífero intercambio con nuestro equipo de dirección y especialistas, liderado por nuestra Presidenta, la MSc. Edelys Ada Saavedra Rodríguez, se presentan las caracteristicas, proyecciones de crecimiento y los principales proyectos que actualmente se ejecutan que impulsan el desarrollo industrial de la región.Se presenta el estado actual del proyecto de cooperación internacional: "Programa de modernización tecnológica y empresarial en el sector de producción de agroquímicos y maquinaria agrícola, financiado por la Organización de las Naciones Unidas para el Desarrollo Industrial a través del Gobierno de la Federación de Rusia(Fase II)". Un intercambio que refuerza los lazos bilaterales y proyecta nuevos horizontes de colaboraciónAgradecemos la visita y reafirmamos nuestro rol en la materialización de alianzas estratégicas que impulsan la economía de nuestra región y el país`,
+    fecha: "14 Oct 2025",
+    categoria: "Anuncio",
+    fotos: [
+      "/noticias/rusia1.jpg",
+      "/noticias/rusia2.jpg",
+      "/noticias/rusia3.jpg",
+    ],
+    enlace: [],
+    multimedia: {
+      imagenes: [],
+      videos: [],
+      audios: [],
+      documents: [],
+    },
+    id: 1,
+  },
+
+  {
+    title:
+      " Parque Científico Tecnológico de Villa CLara y sus claves de exito",
+    descripcion:
+      "Buenas tardes . Hoy cerramos una jornada llena de logros y aprendizajes para el PCT Villa Clara en el marco de la XLI Feria Internacional de La Habana (FIHAV 2025). Queremos compartir con ustedes dos noticias de gran interés: Entrevista exclusiva en la revista Opciones No te pierdas la entrevista publicada en el diario de la feria a nuestra presidenta, MSc. Edelys Ada Saavedra Rodriguez, donde profundiza en los orígenes, misión, proyecciones y principales retos de nuestra empresa. ¡Una lectura imprescindible para conocer más sobre nuestro trabajo y visión! ",
+    fecha: "27 Nov 2025",
+    categoria: "Programa",
+    fotos: ["/noticias/entrevista-revista-opciones.jpg"],
+    enlace: [
+      {
+        title: "Entrevista en Opciones",
+        href: "https://www.juventudrebelde.cu/cuba/2025-11-27/conocimiento-e-innovacion-en-funcion-del-desarrollo",
+      },
+    ],
+    multimedia: {
+      imagenes: [],
+      videos: [],
+      audios: ["entrevista-opciones.mp3"],
+      documents: [],
+    },
+    id: 4,
+  },
+
+  {
     title:
       "Unidos por el Futuro: Colaboración en función del desarrollo territorial",
     descripcion:
@@ -86,6 +107,6 @@ export const noticias: Noticia[] = [
       audios: [],
       documents: [],
     },
-    id: 4,
+    id: 5,
   },
 ];
