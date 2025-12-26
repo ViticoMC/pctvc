@@ -6,19 +6,19 @@ export interface Directivo {
 
 export const directivos: Directivo[] = [
   {
-    name: "Edelys Ada Saavedra Rodríguez",
+    name: "MSc. Edelys Ada Saavedra Rodríguez",
     cargo:
-      "Presidenta Junta Directiva de la Sociedad Mercantil de la Junta Directiva",
-    image: "/professional-woman-portrait.png",
+      "Presidenta de la Junta General de Accionistas y de la Junta Directiva",
+    image: "/junta/edelys.jpg",
   },
   {
-    name: "Danay Álvarez Mesa",
-    cargo: "Vicepresidenta Primera de la Sociedad Mercantil",
-    image: "/professional-woman-portrait-2.png",
+    name: "MSc. Danay Alvarez Mesa. Vicepresidenta Primera.",
+    cargo: "Vicepresidenta Primera",
+    image: "/junta/danay.jpeg",
   },
   {
-    name: "Dalgys La Rosa Morales",
-    cargo: "Vicepresidenta Gestora de la Sociedad Mercantil",
-    image: "/professional-woman-portrait-3.png",
+    name: "Ing. Dalgys La Rosa Morales",
+    cargo: "Vicepresidenta Científica",
+    image: "/junta/dalgys.jpeg",
   },
 ];

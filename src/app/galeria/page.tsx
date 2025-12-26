@@ -15,17 +15,17 @@ import "yet-another-react-lightbox/plugins/captions.css";
 
 const fotosData = [
     {
-        src: "/slide/1.jpg",
+        src: "/slide/01.jpg",
         title: "Portada del PCTVC",
         descriptions: "Entrada al PCTVC",
     },
     {
-        src: "/slide/2.jpg",
+        src: "/slide/07.jpg",
         title: "Reuniones de Cooperadoras",
         descriptions: "Reuniones de cooperadoras",
     },
     {
-        src: "/slide/3.jpg",
+        src: "/slide/02.jpg",
         title: "Salón de recibimiento",
         descriptions: "Interiores de la empresa",
     },

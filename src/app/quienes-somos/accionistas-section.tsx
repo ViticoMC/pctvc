@@ -1,5 +1,5 @@
 import AnimatedContainer from "@/components/animated/animated-container";
-import { accionistas } from "@/moock-data/quienes-somos/accionistas";
+import { accionistas1 } from "@/moock-data/quienes-somos/accionistas";
 import Image from "next/image";
 
 const title = "Instituciones Colaboradoras"
@@ -15,12 +15,12 @@ export function Accionistas() {
                     {title}
                 </AnimatedContainer>
 
-                <div className=" grid gap-10 justify-center  "
+                <div className=" grid gap-10 justify-center  mb-10"
                     style={{
                         gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 150px), 1fr))"
                     }}
                 >
-                    {accionistas.map((accionista) => (
+                    {accionistas1.map((accionista) => (
                         <AnimatedContainer
                             etiqueta="a"
                             atributos={{
@@ -41,6 +41,7 @@ export function Accionistas() {
                         </AnimatedContainer>
                     ))}
                 </div>
+
             </div>
         </section>
     )

@@ -1,4 +1,4 @@
-export const proyectosPCT = [
+export const proyectos = [
   {
     label: "Fuentes renovables de energía",
     content: [
@@ -6,7 +6,7 @@ export const proyectosPCT = [
         title: "Sistemas fotovoltaicos híbridos – PDL Creación",
         descripcion:
           "Estudio, diseño, instalación y puesta en marcha de sistemas fotovoltaicos híbridos con acumulación e inyección a red.",
-        estado: "En ejecución",
+        estado: "Ejecutado",
         fotos: ["/pctvc-logo.jpg"],
       },
       {
@@ -39,7 +39,7 @@ export const proyectosPCT = [
         title: "Modernización agroindustrial – ONUDI",
         descripcion:
           "Programa de modernización tecnológica y empresarial del sector de agroquímicos y maquinaria agrícola (Fase II), financiado por la Federación de Rusia.",
-        estado: "Cooperación internacional",
+        estado: "En ejecución",
         fotos: ["/pctvc-logo.jpg"],
       },
     ],
@@ -90,21 +90,35 @@ export const proyectosPCT = [
         descripcion:
           "Empresa dedicada a la producción de materiales de la construcción a base de arcilla y actividades asociadas a fuentes renovables de energía.",
         estado: "Incubación",
-        fotos: ["/pctvc-logo.jpg"],
+        fotos: ["/proyectos/adobeman.jpg", "/proyectos/productos/pdl1.jpg"],
       },
       {
         title: "PDL CREACIÓN",
         descripcion:
           "Proyecto de desarrollo local orientado a la producción de talabartería y proyectos de producción de alimentos con uso de energías renovables.",
         estado: "Incubación",
-        fotos: ["/pctvc-logo.jpg"],
+        fotos: [
+          "/proyectos/productos/pdl1.jpg",
+          "/proyectos/productos/pdl2.jpg",
+        ],
       },
       {
         title: "PDL MERCAMAX",
         descripcion:
           "Producción y comercialización de productos de aseo e higiene e introducción de nuevas líneas productivas.",
         estado: "Incubación",
-        fotos: ["/pctvc-logo.jpg"],
+        fotos: [
+          "/proyectos/mercamax/mercamax1.webp",
+          "/proyectos/mercamax/mercamax2.jpg",
+          "/proyectos/mercamax/mercamax3.webp",
+          "/proyectos/mercamax/mercamax4.jpg",
+          "/proyectos/mercamax/mercamax5.jpg",
+          "/proyectos/mercamax/mercamax6.jpg",
+          "/proyectos/mercamax/mercamax7.jpg",
+          "/proyectos/mercamax/mercamax8.jpg",
+          "/proyectos/mercamax/mercamax9.jpg",
+          "/proyectos/mercamax/mercamax10.jpg",
+        ],
       },
     ],
   },

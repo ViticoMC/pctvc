@@ -22,7 +22,7 @@ const actividadesPrincipales = [
 
 const actividadesSecundarias = [
   "Brindar servicios de asesoría y consultoría especializada y otras asociadas al desarrollo de sistemas de gestión empresarial, sus componentes o procesos claves, tanto a los grupos de trabajo constituidos para ejecutar proyectos de desarrollo industrial y local, como a otras personas naturales y jurídicas que lo soliciten.",
-  "Ejecutar las operaciones de Comercio Exterior relacionadas con la exportación de bienes y servicios según nomenclatura aprobada por el MINCEX.",
+  "Ejecutar las operaciones de Comercio Exterior relacionadas con los bienes y servicios según nomenclatura aprobada por el MINCEX.",
   "Brindar servicios de atención a delegaciones extranjeras y nacionales, con la prestación de servicios logísticos tales como transportación, alojamiento no turístico, seguro médico, servicios gastronómicos, traducción oficial y no oficial, elaboración de documentos, protocolo, entre otros.",
   "Servicios de trámites a personas naturales nacionales o extranjeras vinculadas a actividades afines a la organización.",
   "Brindar servicios de Protocolo.",

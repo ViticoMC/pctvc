@@ -20,12 +20,14 @@ export function HeroSection() {
   }, [])
 
   const images = [
-    "./slide/1.jpg",
-    "./slide/2.jpg",
-    "./slide/3.jpg",
-    "./slide/4.jpg",
-    "./slide/5.jpg",
-    "./slide/6.jpg",
+    "./slide/01.jpg",
+    "./slide/02.jpg",
+    "./slide/03.jpg",
+    "./slide/04.jpg",
+    "./slide/05.jpg",
+    "./slide/06.jpg",
+    "./slide/07.jpg",
+    "./slide/08.jpeg",
   ]
 
   const [current, setCurrent] = useState(0)

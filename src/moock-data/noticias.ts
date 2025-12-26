@@ -5,7 +5,8 @@ import { Noticia } from "@/type/noticia";
 // audios y muchos otros que sean de interes para el usuario
 export const noticias: Noticia[] = [
   {
-    title: "Parque Cientifico Tecnologico de Villa CLara y sus claves de exito",
+    title:
+      " Parque Científico Tecnológico de Villa CLara y sus claves de exito",
     descripcion:
       "Buenas tardes . Hoy cerramos una jornada llena de logros y aprendizajes para el PCT Villa Clara en el marco de la XLI Feria Internacional de La Habana (FIHAV 2025). Queremos compartir con ustedes dos noticias de gran interés: Entrevista exclusiva en la revista Opciones No te pierdas la entrevista publicada en el diario de la feria a nuestra presidenta, MSc. Edelys Ada Saavedra Rodriguez, donde profundiza en los orígenes, misión, proyecciones y principales retos de nuestra empresa. ¡Una lectura imprescindible para conocer más sobre nuestro trabajo y visión! ",
     fecha: "27 Nov 2025",
@@ -50,7 +51,7 @@ export const noticias: Noticia[] = [
     title: "Visita del Embajador de Guyana a Villa Clara",
     descripcion:
       "El pasado jueves y viernes, recibimos al Excelentísimo Señor Abdool Halim Majeed, embajador de Guyana en Cuba. Durante su visita lo acompañaron funcionarios del gobierno, la Dirección de Comercio Exterior del Gobierno Provincial, la Cámara de Comercio de Villa Clara y el Parque Científico Tecnológico.Su programa de actividades incluyó un fructífero intercambio en el Gobierno Provincial, donde el Parque Científico Tecnológico de Villa Clara participó activamente junto a instituciones y empresas del gobierno.El embajador también visitó las empresas INPUD y Minerva, evaluando oportunidades de colaboración, y sostuvo un contacto con diversas Mypimes, fortaleciendo la innovación y relaciones comerciales. En febrero, celebraremos el aniversario de la Independencia de Guyana en Villa Clara, donde nuestro Parque será ",
-    fecha: "20 Nov 2025",
+    fecha: "26 Jan 2024",
     categoria: "Anuncio",
     fotos: [
       "/noticias/embG1.jpg",

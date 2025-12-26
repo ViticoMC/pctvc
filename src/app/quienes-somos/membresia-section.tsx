@@ -24,6 +24,13 @@ export function Membresia() {
                 >
                     <img src="/colaboradores/iasp.png" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
                 </AnimatedContainer>
+
+                <AnimatedContainer
+                    className=
+                    "inline-block  rounded-2xl  p-8 "
+                >
+                    <img src="/colaboradores/iasp-latam.png" alt="IASP" className="h-24 w-auto mx-auto mb-4" />
+                </AnimatedContainer>
             </div>
         </section >
     )

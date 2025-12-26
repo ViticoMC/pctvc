@@ -26,7 +26,7 @@ export const heroElements: HeroElement[] = [
               con un minimo viable de industria 4.0 , para promover, la generación y sostenibilidad de nuevas y exigentes
               empresas , proporcionando productos y servicios de alto valor agregado y un sistema de gestión alineado
               a la Política de Desarrollo Industrial.`,
-    color: "accent",
+    color: "chart-2",
     direction: "l",
     icon: Eye,
   },
