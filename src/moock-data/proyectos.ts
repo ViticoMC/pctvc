@@ -90,7 +90,7 @@ export const proyectos = [
         descripcion:
           "Empresa dedicada a la producción de materiales de la construcción a base de arcilla y actividades asociadas a fuentes renovables de energía.",
         estado: "Incubación",
-        fotos: ["/proyectos/adobeman.jpg", "/proyectos/productos/pdl1.jpg"],
+        fotos: ["/proyectos/adobeman.jpg"],
       },
       {
         title: "PDL CREACIÓN",
