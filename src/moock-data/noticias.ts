@@ -12,12 +12,12 @@ export const noticias: Noticia[] = [
     categoria: "Anuncio",
     fotos: [
       "/noticias/embG1.jpg",
-      "/noticias/embG2.jpg",
-      "/noticias/embG3.jpg",
+      // "/noticias/embG2.jpg",
+      // "/noticias/embG3.jpg",
       "/noticias/embG4.jpg",
       "/noticias/embG5.jpg",
-      "/noticias/embG6.jpg",
-      "/noticias/embG7.jpg",
+      // "/noticias/embG6.jpg",
+      // "/noticias/embG7.jpg",
     ],
     enlace: [],
     multimedia: {
