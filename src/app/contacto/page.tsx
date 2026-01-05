@@ -37,13 +37,27 @@ export const contactInfo = [
   },
 ]
 
+interface ContactFormData {
+  nombre: string
+  apellidos: string
+  correo: string
+  asunto: string
+  mensaje: string
+}
 function ContactForm() {
   const { ref, isVisible } = useScrollAnimation()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formData, setFormData] = useState<ContactFormData>({
+    nombre: "",
+    apellidos: "",
+    correo: "",
+    asunto: "",
+    mensaje: "",
+  })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(e)
+    console.log(formData)
     setIsSubmitting(true)
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -109,11 +123,14 @@ function ContactForm() {
                   <Label htmlFor="nombre">
                     Nombre <span className="text-destructive">*</span>
                   </Label>
-                  <Input id="nombre" placeholder="Nombre" required />
+                  <Input id="nombre" placeholder="Nombre" required value={formData.nombre} onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="apellidos">Apellidos</Label>
-                  <Input id="apellidos" placeholder="Apellidos" />
+                  <Input id="apellidos" placeholder="Apellidos"
+                    value={formData.apellidos}
+                    onChange={(e) => setFormData({ ...formData, apellidos: e.target.value })}
+                  />
                 </div>
               </div>
 
@@ -121,19 +138,28 @@ function ContactForm() {
                 <Label htmlFor="correo">
                   Correo <span className="text-destructive">*</span>
                 </Label>
-                <Input id="correo" type="email" placeholder="Dirección de Correo" required />
+                <Input id="correo" type="email" placeholder="Dirección de Correo" required
+                  value={formData.correo}
+                  onChange={(e) => setFormData({ ...formData, correo: e.target.value })}
+                />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="asunto">Asunto</Label>
-                <Input id="asunto" placeholder="Asunto" />
+                <Input id="asunto" placeholder="Asunto"
+                  value={formData.asunto}
+                  onChange={(e) => setFormData({ ...formData, asunto: e.target.value })}
+                />
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="mensaje">
                   Mensaje <span className="text-destructive">*</span>
                 </Label>
-                <Textarea id="mensaje" placeholder="Mensaje" rows={5} required className="resize-none" />
+                <Textarea id="mensaje" placeholder="Mensaje" rows={5} required className="resize-none"
+                  value={formData.mensaje}
+                  onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
+                />
               </div>
 
               <Button

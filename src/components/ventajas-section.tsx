@@ -1,23 +1,23 @@
-import { ventajasParque } from "@/moock-data/ventajas-parque";
+import { HomePageInfo } from "@/service/home_page";
 
-export function VentajasParque() {
+export function VentajasParque({ ventajas_section }: { ventajas_section: HomePageInfo["ventajas_section"] }) {
     return (
         <section className="w-full py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4">
                 <h2
                     data-usal="zoomin duration-800  once"
                     className="text-3xl md:text-4xl font-semibold text-center text-slate-800 mb-14">
-                    Principales ventajas competitivas del Parque
+                    {ventajas_section.title}
                 </h2>
 
                 <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 ">
-                    {ventajasParque.map((ventaja) => {
+                    {ventajas_section.advantages.map((ventaja) => {
                         const Icon = ventaja.icon;
 
                         return (
                             <div
                                 data-usal="zoomin duration-800  once"
-                                key={ventaja.id}
+                                key={ventaja.title}
                                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow p-8"
                             >
                                 <div

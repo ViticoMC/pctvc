@@ -4,8 +4,9 @@ import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import { HomePageInfo } from "@/service/home_page"
 
-export function HeroSection() {
+export function HeroSection({ hero_section }: { hero_section: HomePageInfo["hero_section"] }) {
   const heroRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -19,17 +20,9 @@ export function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const images = [
-    "./slide/01.jpg",
-    "./slide/02.jpg",
-    "./slide/03.jpg",
-    "./slide/04.jpg",
-    "./slide/05.jpg",
-    "./slide/06.jpg",
-    "./slide/07.jpg",
-    "./slide/08.jpeg",
-  ]
+  const images = hero_section.slide
 
+  console.log(images)
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
@@ -104,7 +97,7 @@ export function HeroSection() {
               <div
                 data-usal="fade-u split-letter split-delay-50  once"
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 md:px-10 px-4 md:py-4 py-2 bg-black/40 backdrop-blur-md rounded-3xl text-center text-white text-2xl md:text-3xl font-semibold tracking-wide">
-                Alianza , Oportunidad y Desarrollo.
+                {hero_section.slogan}
               </div>
 
             </div>

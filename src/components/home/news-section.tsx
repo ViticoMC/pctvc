@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { noticias } from "@/moock-data/noticias"
 import PhotoSlider from "@/components/photo-slider"
+import { HomePageInfo } from "@/service/home_page"
 
 
 
-export function NewsSection() {
+export function NewsSection({ articles_section }: { articles_section: HomePageInfo["articles_section"] }) {
   return (
     <section id="noticias" className="py-24 lg:py-32 bg-linear-to-b from-slate-50 to-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,13 +18,13 @@ export function NewsSection() {
               data-usal="zoomin duration-700  once"
               className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4"
             >
-              Mantente Informado
+              {articles_section.small_title}
             </p>
             <h2
               data-usal="fade-r duration-700 delay-200  once"
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground  "
             >
-              Artículos tecnicos, entrevistas y noticias nacionales e internacionales
+              {articles_section.title}
             </h2>
           </div>
           <Link

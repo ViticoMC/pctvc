@@ -1,12 +1,11 @@
-// Componente SSR — NO lleva "use client"
 
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { contactInfo } from "@/app/contacto/page"
+import { HomePageInfo } from "@/service/home_page"
 
-export function ContactSection() {
+export function ContactSection({ contact_section }: { contact_section: HomePageInfo["contact_section"] }) {
   return (
     <section id="contacto" className="py-24 lg:py-32 bg-primary relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/abstract-geometric-pattern-subtle-dark.jpg')] opacity-5" />
@@ -20,21 +19,21 @@ export function ContactSection() {
               className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4"
               data-usal="fade-r duration-600  once"
             >
-              Contáctanos
+              {contact_section.small_title}
             </span>
 
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight"
               data-usal="fade-r duration-600 delay-100  once"
             >
-              ¿Listo para Innovar?
+              {contact_section.title}
             </h2>
 
             <p
               className="text-primary-foreground/80 text-lg mb-10 leading-relaxed"
               data-usal="fade-r duration-600 delay-200  once"
             >
-              Estamos aquí para ayudarte a convertir tus ideas en realidad. Contáctanos y descubre cómo podemos impulsar tu proyecto.
+              {contact_section.subtitle}
             </p>
 
             {/* Contact Info Items with stagger animation */}
@@ -49,8 +48,14 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm text-primary-foreground/60">Email</div>
-                  <div className="text-primary-foreground font-medium">pctvillaclara@pctvc.cu</div>
-                  <div className="text-primary-foreground font-medium">clientes@pctvc.cu</div>
+                  <div className="flex flex-col ">
+                    {
+                      contact_section.emails.map((email) => (
+                        <em className="text-primary-foreground font-medium">{email}</em>
+                      )
+                      )
+                    }
+                  </div>
                 </div>
               </div>
 
@@ -63,9 +68,24 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm text-primary-foreground/60">Teléfono</div>
-                  <div className="text-primary-foreground font-medium">+53 42281551</div>
+                  <div className="flex flex-col">
+                    {
+                      contact_section.phones.map((phone) => (
+                        <p className="text-primary-foreground font-medium">{phone}</p>
+                      )
+                      )
+                    }
+                  </div>
                   <div className="text-sm text-primary-foreground/60">Extensiones</div>
-                  <div className="text-primary-foreground font-medium">101-107</div>
+                  <div className="flex flex-col">
+
+                    {
+                      contact_section.extensiones.map((extension) => (
+                        <p className="text-primary-foreground font-medium">{extension}</p>
+                      )
+                      )
+                    }
+                  </div>
                 </div>
               </div>
 
@@ -79,9 +99,12 @@ export function ContactSection() {
                 <div>
                   <div className="text-sm text-primary-foreground/60">Dirección</div>
                   <div className="text-primary-foreground font-medium">
-                    <p>Carretera a Planta Mecánica, No. 39 B,</p>
-                    <p>entrada a Almacenes Universales,</p>
-                    <p>Municipio Santa Clara, Provincia Villa Clara, Cuba</p>
+                    {
+                      contact_section.address.map((address) => (
+                        <p>{address}</p>
+                      )
+                      )
+                    }
                   </div>
                 </div>
               </div>
