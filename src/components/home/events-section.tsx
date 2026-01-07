@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import EventoCard from "../event-card"
 import { eventosData } from "@/moock-data/eventos"
+import { HomePageInfo } from "@/service/home_page"
 
-export function EventsSection() {
+export function EventsSection({ events_section }: { events_section: HomePageInfo["events_section"] }) {
   return (
     <section id="eventos" className="py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,21 +19,21 @@ export function EventsSection() {
             data-usal="fade-up duration-700  once"
             className="inline-block text-accent font-semibold text-sm tracking-wider uppercase mb-4"
           >
-            Agenda
+            {events_section.small_title}
           </span>
 
           <h2
             data-usal="fade-up duration-700 delay-100  once"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground"
           >
-            Eventos
+            {events_section.title}
           </h2>
 
           <p
             data-usal="fade-up duration-700 delay-200  once"
             className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto"
           >
-            Participa en nuestras actividades y conecta con la comunidad
+            {events_section.subtitle}
           </p>
         </div>
 

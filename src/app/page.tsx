@@ -8,30 +8,35 @@ import { USALProvider } from '@usal/react';
 import Image from "next/image"
 import { VentajasParque } from "@/components/ventajas-section"
 import ConvergenciaParque from "@/components/home/confluencia"
+
+import { home_page_info } from "@/service/home_page"
+
 import FlagsCounter from "@/components/home/flags-counter"
 
+
 export default function Home() {
+  const home_page = home_page_info();
+
   return (
     <USALProvider>
       <main className="min-h-screen bg-transparent">
         {/* <Navbar /> */}
-        <HeroSection />
-        <WelcomeSection />
-        <ConvergenciaParque />
-        <ServicesSection />
+        <HeroSection hero_section={home_page.hero_section} />
+        <WelcomeSection welcome_section={home_page.welcome_section} />
+        <ConvergenciaParque confluencia_section={home_page.confluencia_section} />
+        <ServicesSection services_section={home_page.servicios_section} />
         <div className="fixed -z-100 inset-0 overflow-hidden pointer-events-none h-screen w-screen">
           <Image
             fill
-            src="/soluciones-bg.jpg"
+            src={home_page.image_bg}
             alt="Fondo"
             className="min-w-screen min-h-screen"
           />
         </div>
-        <VentajasParque />
-        <FlagsCounter />
-        <NewsSection />
-        <EventsSection />
-        <ContactSection />
+        <VentajasParque ventajas_section={home_page.ventajas_section} />
+        <NewsSection articles_section={home_page.articles_section} />
+        <EventsSection events_section={home_page.events_section} />
+        <ContactSection contact_section={home_page.contact_section} />
         {/* <Footer /> */}
       </main>
     </USALProvider>

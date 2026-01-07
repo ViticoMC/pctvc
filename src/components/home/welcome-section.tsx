@@ -1,5 +1,8 @@
+import { HomePageInfo } from "@/service/home_page";
 
-export function WelcomeSection() {
+export function WelcomeSection({ welcome_section }: { welcome_section: HomePageInfo["welcome_section"] }) {
+  const title = welcome_section.title.split(" ");
+
   return (
     <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-b from-primary/5 to-transparent" />
@@ -9,27 +12,20 @@ export function WelcomeSection() {
           <div>
             <p className="text-accent font-semibold text-md tracking-wider uppercase"
               data-usal="fade-r duration-600  once"
-            >Bienvenidos</p>
+            >{welcome_section.small_title}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6 leading-tight"
               data-usal="fade-r duration-500 delay-200  once"
-
             >
-              Parque <span className="text-blue-500">Científico Tecnológico</span> de Villa Clara
+              {title[0]} <span className="text-blue-500">{title[1] + " " + title[2]}</span> {title[3] + " " + title[4] + " " + title[5]}
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6"
               data-usal="fade-r duration-500 delay-300  once"
 
             >
-              El Parque Científico Tecnológico de Villa Clara es un centro de innovación que promueve la colaboración
-              entre gobierno,  el sector del conocimiento y el sector empresarial
-              para impulsar el desarrollo científico-tecnológico en Cuba. Ofrece
-              un entorno dinámico para crear y hacer crecer empresas tecnológicas, facilitando la transferencia de
-              conocimientos y tecnologías.
-              Alianza Oportunidad y Desarrollo
+              {welcome_section.text_1}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Nuestro compromiso es ser el puente entre la academia, la industria y el gobierno, facilitando la
-              transferencia de conocimiento y tecnología que genere impacto positivo en la sociedad.
+              {welcome_section.text_2}
             </p>
 
             {/* <div className="mt-10 flex items-center gap-6">
@@ -45,7 +41,7 @@ export function WelcomeSection() {
             >
               <div className="aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/eventos/feriaC4.jpg"
+                  src={welcome_section.image}
                   alt="Centro de innovación"
                   className="w-full h-full object-cover"
                 />
