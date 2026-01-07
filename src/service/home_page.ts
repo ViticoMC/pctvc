@@ -71,8 +71,8 @@ export interface HomePageInfo {
 }
 
 export function home_page_info() {
-  // return apiClient.get("/home_page_info");
-  return home_info;
+  return apiClient.get("/home_page");
+  // return home_info;
 }
 
 const home_info: HomePageInfo = {
