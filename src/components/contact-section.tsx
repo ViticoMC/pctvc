@@ -51,7 +51,7 @@ export function ContactSection({ contact_section }: { contact_section: HomePageI
                   <div className="flex flex-col ">
                     {
                       contact_section.emails.map((email) => (
-                        <em className="text-primary-foreground font-medium">{email}</em>
+                        <p className="text-primary-foreground font-medium" key={email}>{email}</p>
                       )
                       )
                     }
@@ -71,7 +71,7 @@ export function ContactSection({ contact_section }: { contact_section: HomePageI
                   <div className="flex flex-col">
                     {
                       contact_section.phones.map((phone) => (
-                        <p className="text-primary-foreground font-medium">{phone}</p>
+                        <p key={phone} className="text-primary-foreground font-medium">{phone}</p>
                       )
                       )
                     }
@@ -81,7 +81,7 @@ export function ContactSection({ contact_section }: { contact_section: HomePageI
 
                     {
                       contact_section.extensiones.map((extension) => (
-                        <p className="text-primary-foreground font-medium">{extension}</p>
+                        <p className="text-primary-foreground font-medium" key={extension}>{extension}</p>
                       )
                       )
                     }
@@ -101,7 +101,7 @@ export function ContactSection({ contact_section }: { contact_section: HomePageI
                   <div className="text-primary-foreground font-medium">
                     {
                       contact_section.address.map((address) => (
-                        <p>{address}</p>
+                        <p key={address}>{address}</p>
                       )
                       )
                     }
