@@ -20,7 +20,7 @@ export async function getCountry() {
 export async function registerVisit(countryCode: string) {
   await connectMongo();
 
-  const res = await Traffic.findOneAndUpdate(
+  await Traffic.findOneAndUpdate(
     { countryCode },
     { $inc: { visits: 1 } },
     { upsert: true, new: true }

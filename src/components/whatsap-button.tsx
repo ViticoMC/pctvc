@@ -16,7 +16,8 @@ export default function WhatsappIcon({
     return (
         <div className="fixed bottom-4 right-4 z-100">
             {/* redirigir a whatsapp */}
-            <a href="wame"
+            <a href="https://wa.me/+5350903156"
+                target="_blank"
                 className="relative inline-flex items-center"
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
