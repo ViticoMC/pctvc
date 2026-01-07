@@ -10,12 +10,13 @@ export const HeroCard = ({
   direction,
   icon,
 }: HeroElement) => {
+  console.log(color);
   const Icon = icon
   return (
     <AnimatedContainer
       animation="zoomin"
       direction={direction}
-      className={`bg-linear-to-br from-${color} to-${color}/80 rounded-2xl p-8 `}
+      className={`bg-${color} rounded-2xl p-8 `}
     >
       <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-6">
         <Icon className="h-7 w-7 text-white" />

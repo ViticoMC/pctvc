@@ -8,7 +8,11 @@ import { USALProvider } from '@usal/react';
 import Image from "next/image"
 import { VentajasParque } from "@/components/ventajas-section"
 import ConvergenciaParque from "@/components/home/confluencia"
+
 import { home_page_info } from "@/service/home_page"
+
+import FlagsCounter from "@/components/home/flags-counter"
+
 
 export default function Home() {
   const home_page = home_page_info();

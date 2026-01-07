@@ -57,7 +57,6 @@ function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log(formData)
     setIsSubmitting(true)
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000))

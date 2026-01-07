@@ -10,6 +10,15 @@ export function HeroSection({ hero_section }: { hero_section: HomePageInfo["hero
   const heroRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (!localStorage.getItem("visited")) {
+      // actualizando counter
+      console.log("visitado")
+      fetch("/api/traffic", { method: "POST" });
+      localStorage.setItem("visited", "true");
+    }
+  }, [])
+
+  useEffect(() => {
     const handleScroll = () => {
       if (heroRef.current) {
         const scrolled = window.scrollY
