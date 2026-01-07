@@ -8,6 +8,7 @@ import { USALProvider } from '@usal/react';
 import Image from "next/image"
 import { VentajasParque } from "@/components/ventajas-section"
 import ConvergenciaParque from "@/components/home/confluencia"
+import FlagsCounter from "@/components/home/flags-counter"
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           />
         </div>
         <VentajasParque />
+        <FlagsCounter />
         <NewsSection />
         <EventsSection />
         <ContactSection />

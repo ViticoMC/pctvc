@@ -9,6 +9,7 @@ import Logo from "@/components/logo";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { USALProvider } from "@usal/react";
+import WhatsappIcon from "@/components/whatsap-button";
 
 // Lato - Fuente por defecto
 const lato = localFont({
@@ -109,6 +110,7 @@ export default function RootLayout({
         <USALProvider>
 
           <Navbar />
+          <WhatsappIcon size={50} />
           {children}
           <Footer />
           <Analytics />
