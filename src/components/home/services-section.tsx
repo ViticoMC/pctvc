@@ -1,10 +1,10 @@
 
 import { cn } from "@/lib/utils"
-import { HomePageInfo } from "@/service/home_page"
 import FinanciacionIcon from "./icons/financiacion"
 import RecursosIcon from "./icons/recursos"
 import EspaciosIcon from "./icons/espacios"
 import RiesgosIcon from "./icons/riesgos"
+import { HomePageInfo } from "@/type/home_page"
 
 const icons = [
   FinanciacionIcon,

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { noticias } from "@/moock-data/noticias"
 import PhotoSlider from "@/components/photo-slider"
-import { HomePageInfo } from "@/service/home_page"
+import { HomePageInfo } from "@/type/home_page"
 
 
 

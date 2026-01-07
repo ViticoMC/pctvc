@@ -1,6 +1,6 @@
 "use client";
 
-import { HomePageInfo } from "@/service/home_page";
+import { HomePageInfo } from "@/type/home_page";
 import { motion } from "framer-motion";
 import { useState } from "react";
 

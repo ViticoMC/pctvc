@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { HomePageInfo } from "@/service/home_page"
+import { HomePageInfo } from "@/type/home_page"
 
 export function ContactSection({ contact_section }: { contact_section: HomePageInfo["contact_section"] }) {
   return (

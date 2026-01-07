@@ -10,7 +10,6 @@ export const HeroCard = ({
   direction,
   icon,
 }: HeroElement) => {
-  console.log(color);
   const Icon = icon
   return (
     <AnimatedContainer

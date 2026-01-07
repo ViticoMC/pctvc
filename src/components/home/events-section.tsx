@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import EventoCard from "../event-card"
 import { eventosData } from "@/moock-data/eventos"
-import { HomePageInfo } from "@/service/home_page"
+import { HomePageInfo } from "@/type/home_page"
 
 export function EventsSection({ events_section }: { events_section: HomePageInfo["events_section"] }) {
   return (

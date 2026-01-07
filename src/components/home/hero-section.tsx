@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
-import { HomePageInfo } from "@/service/home_page"
+import { HomePageInfo } from "@/type/home_page"
 
 export function HeroSection({ hero_section }: { hero_section: HomePageInfo["hero_section"] }) {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -12,7 +12,6 @@ export function HeroSection({ hero_section }: { hero_section: HomePageInfo["hero
   useEffect(() => {
     if (!localStorage.getItem("visited")) {
       // actualizando counter
-      console.log("visitado")
       fetch("/api/traffic", { method: "POST" });
       localStorage.setItem("visited", "true");
     }
@@ -31,7 +30,6 @@ export function HeroSection({ hero_section }: { hero_section: HomePageInfo["hero
 
   const images = hero_section.slide
 
-  console.log(images)
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {

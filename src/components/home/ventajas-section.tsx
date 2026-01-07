@@ -1,4 +1,14 @@
-import { HomePageInfo } from "@/service/home_page";
+
+import { HomePageInfo } from "@/type/home_page";
+import { BadgeDollarSign, FlaskConical, MapPin, PackageCheck } from "lucide-react";
+
+const icons = [
+    BadgeDollarSign,
+    PackageCheck,
+    FlaskConical,
+    MapPin,
+]
+
 
 export function VentajasParque({ ventajas_section }: { ventajas_section: HomePageInfo["ventajas_section"] }) {
     return (
@@ -11,8 +21,8 @@ export function VentajasParque({ ventajas_section }: { ventajas_section: HomePag
                 </h2>
 
                 <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 ">
-                    {ventajas_section.advantages.map((ventaja) => {
-                        const Icon = ventaja.icon;
+                    {ventajas_section.advantages.map((ventaja, index) => {
+                        const Icon = icons[index];
 
                         return (
                             <div

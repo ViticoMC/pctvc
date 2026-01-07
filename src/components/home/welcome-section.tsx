@@ -1,4 +1,4 @@
-import { HomePageInfo } from "@/service/home_page";
+import { HomePageInfo } from "@/type/home_page";
 
 export function WelcomeSection({ welcome_section }: { welcome_section: HomePageInfo["welcome_section"] }) {
   const title = welcome_section.title.split(" ");

@@ -5,17 +5,25 @@ import { NewsSection } from "@/components/home/news-section"
 import { EventsSection } from "@/components/home/events-section"
 import { ContactSection } from "@/components/contact-section"
 import { USALProvider } from '@usal/react';
-import Image from "next/image"
-import { VentajasParque } from "@/components/ventajas-section"
+import { VentajasParque } from "@/components/home/ventajas-section"
 import ConvergenciaParque from "@/components/home/confluencia"
-
-import { home_page_info } from "@/service/home_page"
-
 import FlagsCounter from "@/components/home/flags-counter"
 
+import { get_home_page_info } from "@/service/home_page"
 
-export default function Home() {
-  const home_page = home_page_info();
+import Image from "next/image"
+import { notFound } from "next/navigation"
+
+
+export default async function Home() {
+  const res = await get_home_page_info();
+
+  console.log(res)
+  if (!res.success) {
+    return notFound()
+  }
+
+  const home_page = res.data
 
   return (
     <USALProvider>
@@ -34,6 +42,8 @@ export default function Home() {
           />
         </div>
         <VentajasParque ventajas_section={home_page.ventajas_section} />
+        {/* <AdvantagesSection /> */}
+        <FlagsCounter />
         <NewsSection articles_section={home_page.articles_section} />
         <EventsSection events_section={home_page.events_section} />
         <ContactSection contact_section={home_page.contact_section} />
