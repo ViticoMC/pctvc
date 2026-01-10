@@ -63,13 +63,13 @@ const fotosData = [
 
 
 const videosData = [
-    {
-        id: 1,
-        src: "/videos/parque-presentacion.mp4",
-        // poster: "/interview-directors-office.jpg",
-        titulo: "Presentacion del Parque",
-        fecha: "2024-06-01",
-    },
+    // {
+    //     id: 1,
+    //     src: "/videos/parque-presentacion.mp4",
+    //     // poster: "/interview-directors-office.jpg",
+    //     titulo: "Presentacion del Parque",
+    //     fecha: "2024-06-01",
+    // },
     {
         id: 2,
         src: "/videos/parque-video-anual.mp4",
@@ -77,13 +77,13 @@ const videosData = [
         titulo: "Video anuel del PCTVC",
         fecha: "2025-12-1",
     },
-    {
-        id: 3,
-        src: "/videos/video3.mp4",
-        poster: "/modern-facility-tour.jpg",
-        titulo: "Tour por las instalaciones",
-        fecha: "2024-07-01",
-    },
+    // {
+    //     id: 3,
+    //     src: "/videos/video3.mp4",
+    //     poster: "/modern-facility-tour.jpg",
+    //     titulo: "Tour por las instalaciones",
+    //     fecha: "2024-07-01",
+    // },
 ]
 
 
