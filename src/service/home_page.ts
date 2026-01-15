@@ -8,7 +8,9 @@ import {
 } from "lucide-react";
 
 export async function get_home_page_info() {
-  return await apiClient.get<HomePageInfo>("/home_page");
+  return await apiClient.get<HomePageInfo>(
+    "http://localhost:3000/api/home_page"
+  );
   // return home_info;
 }
 

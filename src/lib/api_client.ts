@@ -8,6 +8,7 @@ export type ApiResponse<T> =
 
 class ApiClient {
   async get<T>(path: string, params?: any): Promise<ApiResponse<T>> {
+    console.log(path, "path");
     try {
       const { data } = await instance.get<T>(path, { params });
 

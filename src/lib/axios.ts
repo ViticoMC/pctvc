@@ -6,6 +6,6 @@ export const instance = axios.create({
   baseURL: isServer
     ? process.env.NEXT_PUBLIC_BASE_URL
       ? `${process.env.NEXT_PUBLIC_BASE_URL}/api`
-      : "http://localhost:3001/api"
+      : "http://localhost:3000/api"
     : "/api",
 });
