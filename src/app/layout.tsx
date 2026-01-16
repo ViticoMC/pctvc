@@ -10,6 +10,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { USALProvider } from "@usal/react";
 import WhatsappIcon from "@/components/whatsap-button";
+import { getCountry, registerVisit } from "@/lib/country-count";
 
 // Lato - Fuente por defecto
 const lato = localFont({
@@ -99,11 +100,15 @@ export const metadata: Metadata = {
   generator: 'v0.app'
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Registrar visita en el servidor
+  const country = await getCountry();
+  await registerVisit(country);
+
   return (
     <html lang="es">
       <body className={`${lato.variable} ${duneRise.variable} antialiased relative`}>
