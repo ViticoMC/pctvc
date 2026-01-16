@@ -9,6 +9,7 @@ import Image from "next/image"
 import { VentajasParque } from "@/components/ventajas-section"
 import ConvergenciaParque from "@/components/home/confluencia"
 import FlagsCounter from "@/components/home/flags-counter"
+import { ContactForm } from "./contacto/page"
 
 export default function Home() {
   return (
@@ -31,7 +32,8 @@ export default function Home() {
         <FlagsCounter />
         <NewsSection />
         <EventsSection />
-        <ContactSection />
+        {/* <ContactSection /> */}
+        <ContactForm />
         {/* <Footer /> */}
       </main>
     </USALProvider>

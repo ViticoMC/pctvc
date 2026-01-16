@@ -9,7 +9,7 @@ const footerLinks = {
     { name: "Proyectos", href: "/proyectos" },
     { name: "Servicios", href: "/servicios" },
     { name: "Contacto", href: "/contacto" },
-    { name: "Mapa del Sitio", href: "#" },
+    { name: "Mapa del Sitio", href: "/contacto#mapa" },
   ],
   sitios: [
     { name: "Universidad Central «Marta Abreu» de Las Villas", href: "https://www.uclv.edu.cu/" },

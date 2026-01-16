@@ -1,10 +1,5 @@
 "use client"
-
-import type React from "react"
-
 import { useState } from "react"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
 import { PageHeader } from "@/components/page-header"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { cn } from "@/lib/utils"
@@ -13,6 +8,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { MapPin, Mail, Phone, Clock, Send } from "lucide-react"
+import { useForm } from "react-hook-form"
+import { email, emailSqema } from "@/squema/email"
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export const contactInfo = [
   {
@@ -37,15 +35,54 @@ export const contactInfo = [
   },
 ]
 
-function ContactForm() {
-  const { ref, isVisible } = useScrollAnimation()
-  const [isSubmitting, setIsSubmitting] = useState(false)
+function ErrorMessage({ message }: { message?: string }) {
+  if (!message) return
+  return (
+    <p className="text-sm text-red-500">{message}</p>
+  )
+}
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+
+export function ContactForm() {
+  const { ref, isVisible } = useScrollAnimation()
+  const [error, setError] = useState("")
+  const [success, setSuccess] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }, } = useForm<email>({
+      shouldFocusError: true,
+      resolver: zodResolver(emailSqema),
+    })
+
+
+  const onSubmit = async (data: email) => {
     setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    setError("")
+    setSuccess(false)
+
+    try {
+      const res = await fetch("/api/email", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+
+      const result = await res.json()
+
+      if (!res.ok) {
+        setError(result.error || "Algo ha salido mal, intente otra vez")
+      } else {
+        setSuccess(true)
+        reset() // Limpiar el formulario
+      }
+    } catch (e) {
+      setError("Algo ha salido mal, intente otra vez")
+    }
     setIsSubmitting(false)
   }
 
@@ -102,17 +139,25 @@ function ContactForm() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8",
             )}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="nombre">
                     Nombre <span className="text-destructive">*</span>
                   </Label>
-                  <Input id="nombre" placeholder="Nombre" required />
+                  <Input
+                    {...register("nombre")}
+                    id="nombre" placeholder="Nombre" required />
+                  <ErrorMessage message={errors.nombre?.message || ""} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="apellidos">Apellidos</Label>
-                  <Input id="apellidos" placeholder="Apellidos" />
+                  <Input
+                    {...register("apellidos")}
+                    id="apellidos"
+                    placeholder="Apellidos" />
+                  <ErrorMessage message={errors.apellidos?.message || ""} />
+
                 </div>
               </div>
 
@@ -120,20 +165,44 @@ function ContactForm() {
                 <Label htmlFor="correo">
                   Correo <span className="text-destructive">*</span>
                 </Label>
-                <Input id="correo" type="email" placeholder="Dirección de Correo" required />
+                <Input
+                  {...register("correo")}
+                  id="correo" type="email" placeholder="Dirección de Correo" required />
+                <ErrorMessage message={errors.correo?.message || ""} />
+
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="asunto">Asunto</Label>
-                <Input id="asunto" placeholder="Asunto" />
+                <Input
+                  {...register("asunto")}
+
+                  id="asunto" placeholder="Asunto" />
+                <ErrorMessage message={errors.asunto?.message || ""} />
+
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="mensaje">
                   Mensaje <span className="text-destructive">*</span>
                 </Label>
-                <Textarea id="mensaje" placeholder="Mensaje" rows={5} required className="resize-none" />
+                <Textarea
+                  {...register("mensaje")}
+
+                  id="mensaje" placeholder="Mensaje" rows={5} required className="resize-none" />
+                <ErrorMessage message={errors.mensaje?.message || ""} />
+
               </div>
+              {
+                error && (
+                  <ErrorMessage message={error} />
+                )
+              }
+              {
+                success && (
+                  <p className="text-sm text-green-500">¡Mensaje enviado exitosamente!</p>
+                )
+              }
 
               <Button
                 type="submit"
@@ -161,7 +230,7 @@ function MapSection() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section ref={ref} className="py-20 bg-muted">
+    <section ref={ref} className="py-20 bg-muted" id="mapa">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
           className={cn(
