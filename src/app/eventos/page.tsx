@@ -1,9 +1,7 @@
 "use client";
 
-import Slider from "react-slick";
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { eventosData } from "@/moock-data/eventos";
 import Link from "next/link";
 
