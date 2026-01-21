@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     if (!nombre || !correo || !mensaje) {
       return new Response(
         JSON.stringify({ error: "Faltan campos requeridos" }),
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
 
@@ -34,8 +34,6 @@ export async function POST(req: NextRequest) {
         <p>${mensaje.replace(/\n/g, "<br>")}</p>
       `,
     });
-
-    console.log("Email enviado:", data);
 
     return new Response(JSON.stringify({ success: true, data }), {
       status: 200,
