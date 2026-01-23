@@ -11,6 +11,9 @@ import { MapPin, Mail, Phone, Clock, Send } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { email, emailSqema } from "@/squema/email"
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Resend } from "resend";
+
+const resend = new Resend("re_NgzRh7fN_2F2odyfpc85MJH5xbhRXAKGZ");
 
 export const contactInfo = [
   {
@@ -64,24 +67,45 @@ export function ContactForm() {
     setSuccess(false)
 
     try {
-      const res = await fetch("/api/email", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify(data)
-      })
+      const { nombre, apellidos, correo, asunto, mensaje } = data;
 
-      const result = await res.json()
-
-      if (!res.ok) {
-        setError(result.error || "Algo ha salido mal, intente otra vez")
-      } else {
-        setSuccess(true)
-        reset() // Limpiar el formulario
+      // Validación básica
+      if (!nombre || !correo || !mensaje) {
+        return new Response(
+          JSON.stringify({ error: "Faltan campos requeridos" }),
+          { status: 400, headers: { "Content-Type": "application/json" } },
+        );
       }
-    } catch (e) {
-      setError("Algo ha salido mal, intente otra vez")
+
+      const nombreCompleto = apellidos ? `${nombre} ${apellidos}` : nombre;
+      const asuntoEmail = asunto || "Nuevo mensaje desde la web del PCTVC";
+
+      const res = await resend.emails.send({
+        from: "onboarding@resend.dev",
+        to: ["pctvillaclara@pctvc.cu"], // correo de la empresa
+        // to: ["victormanuelmartinezcampo178@gmail.com"], // correo de la empresa
+        subject: asuntoEmail,
+        replyTo: correo,
+        html: `
+        <h2>Nuevo mensaje de contacto</h2>
+        <p><strong>Nombre:</strong> ${nombreCompleto}</p>
+        <p><strong>Email:</strong> ${correo}</p>
+        ${asunto ? `<p><strong>Asunto:</strong> ${asunto}</p>` : ""}
+        <p><strong>Mensaje:</strong></p>
+        <p>${mensaje.replace(/\n/g, "<br>")}</p>
+      `,
+      });
+
+      return new Response(JSON.stringify({ success: true, res }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (error) {
+      console.error("Error enviando email:", error);
+      return new Response(JSON.stringify({ error: "Error enviando email" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
     }
     setIsSubmitting(false)
   }
