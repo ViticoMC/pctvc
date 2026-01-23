@@ -1,20 +1,24 @@
 export default function PhotoIcon({ isActive }: { isActive: boolean }) {
+    const rectClass = isActive ? "fill-blue-100 stroke-blue-600" : "fill-transparent stroke-white/60";
+    const circleClass = isActive ? "fill-blue-600 stroke-blue-600" : "fill-transparent stroke-white/60";
+    const pathClass = isActive ? "fill-amber-400" : "fill-white/40";
+
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="transition-all duration-300">
             <rect
-                x="3"
-                y="6"
+                x="2"
+                y="4"
                 width="22"
-                height="16"
-                rx="3"
-                className={`transition-all duration-500 ${isActive ? "fill-blue-100 stroke-blue-600" : "fill-transparent stroke-white/60"}`}
+                height="20"
+                rx="2"
+                className={`transition-all duration-500 ${rectClass}`}
                 strokeWidth="2"
             />
             <circle
-                cx="14"
-                cy="14"
-                r="4"
-                className={`transition-all duration-500 ${isActive ? "fill-blue-600 stroke-blue-600" : "fill-transparent stroke-white/60"}`}
+                cx="8"
+                cy="10"
+                r="2"
+                className={`transition-all duration-500 ${circleClass}`}
                 strokeWidth="2"
             >
                 {isActive && <animate attributeName="r" values="4;4.5;4" dur="1.5s" repeatCount="indefinite" />}
@@ -23,7 +27,7 @@ export default function PhotoIcon({ isActive }: { isActive: boolean }) {
                 cx="20"
                 cy="10"
                 r="1.5"
-                className={`transition-all duration-300 ${isActive ? "fill-amber-400" : "fill-white/40"}`}
+                className={`transition-all duration-300 ${pathClass}`}
             >
                 {isActive && <animate attributeName="opacity" values="1;0.5;1" dur="0.8s" repeatCount="indefinite" />}
             </circle>

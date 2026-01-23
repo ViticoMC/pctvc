@@ -4,6 +4,11 @@ import { noticias } from "@/moock-data/noticias";
 import { notFound } from "next/navigation";
 import { Activity, Suspense } from "react";
 
+export function generateStaticParams() {
+    return noticias.map((noticia) => ({
+        id: noticia.id.toString(),
+    }));
+}
 
 
 // Componente de fallback/loading
@@ -24,16 +29,17 @@ function NoticiasLoadingFallback() {
     );
 }
 
-async function getNoticia({ id }: { id: string }) {
+function getNoticia(id: string) {
     return noticias.find((noticia) => noticia.id === Number(id));
 }
 
-export default async function PaginaNoticias({ params }: { params: Promise<{ id: string }> }) {
-    // En Next.js 15+, params es una Promise
-    const { id } = await params;
-    const noticia = await getNoticia({ id });
+export default function PaginaNoticias({ params }: { params: { id: string } }) {
+    const { id } = params;
+    const noticia = getNoticia(id);
 
-    if (!noticia) return notFound()
+    if (!noticia) {
+        return <div>Noticia no encontrada</div>;
+    }
 
     const { imagenes, videos, audios, documents } = noticia.multimedia;
 

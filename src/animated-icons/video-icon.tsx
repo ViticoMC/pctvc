@@ -1,4 +1,8 @@
 export default function VideoIcon({ isActive }: { isActive: boolean }) {
+    const rectClass = isActive ? "fill-teal-100 stroke-teal-600" : "fill-transparent stroke-white/60";
+    const pathClass = isActive ? "fill-teal-200 stroke-teal-600" : "fill-transparent stroke-white/60";
+    const circleClass = isActive ? "fill-red-500" : "fill-white/40";
+
     return (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" className="transition-all duration-300">
             <rect
@@ -7,12 +11,12 @@ export default function VideoIcon({ isActive }: { isActive: boolean }) {
                 width="16"
                 height="14"
                 rx="2"
-                className={`transition-all duration-500 ${isActive ? "fill-teal-100 stroke-teal-600" : "fill-transparent stroke-white/60"}`}
+                className={`transition-all duration-500 ${rectClass}`}
                 strokeWidth="2"
             />
             <path
                 d="M18 10L24 7V21L18 18V10Z"
-                className={`transition-all duration-500 ${isActive ? "fill-teal-200 stroke-teal-600" : "fill-transparent stroke-white/60"}`}
+                className={`transition-all duration-500 ${pathClass}`}
                 strokeWidth="2"
                 strokeLinejoin="round"
             />
@@ -20,7 +24,7 @@ export default function VideoIcon({ isActive }: { isActive: boolean }) {
                 cx="7"
                 cy="11"
                 r="2"
-                className={`transition-all duration-300 ${isActive ? "fill-red-500" : "fill-white/40"}`}
+                className={`transition-all duration-300 ${circleClass}`}
             >
                 {isActive && <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite" />}
             </circle>
