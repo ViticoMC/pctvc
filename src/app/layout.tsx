@@ -10,7 +10,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { USALProvider } from "@usal/react";
 import WhatsappIcon from "@/components/whatsap-button";
-import { getCountry, registerVisit } from "@/lib/country-count";
+// import { getCountry, registerVisit } from "@/lib/country-count";
 
 // Lato - Fuente por defecto
 const lato = localFont({
@@ -106,8 +106,8 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   // Registrar visita en el servidor
-  const country = await getCountry();
-  await registerVisit(country);
+  // const country = await getCountry();
+  // await registerVisit(country);
 
   return (
     <html lang="es">

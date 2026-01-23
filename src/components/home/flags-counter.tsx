@@ -1,4 +1,4 @@
-import { getTrafficStats } from "@/lib/country-count"
+// import { getTrafficStats } from "@/lib/country-count"
 import { Card } from "../ui/card"
 
 const fake_stats = [

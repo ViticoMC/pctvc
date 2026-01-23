@@ -8,14 +8,14 @@ import Link from "next/link"
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    if (!localStorage.getItem("visited")) {
-      // actualizando counter
-      console.log("visitado")
-      fetch("/api/traffic", { method: "POST" });
-      localStorage.setItem("visited", "true");
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (!localStorage.getItem("visited")) {
+  //     // actualizando counter
+  //     console.log("visitado")
+  //     fetch("/api/traffic", { method: "POST" });
+  //     localStorage.setItem("visited", "true");
+  //   }
+  // }, [])
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,21 +1,21 @@
-import {
-  getCountry,
-  registerVisit,
-  getTrafficStats,
-} from "@/lib/country-count";
+// import {
+//   getCountry,
+//   registerVisit,
+//   getTrafficStats,
+// } from "@/lib/country-count";
 
 // POST: Registrar una nueva visita
 export async function POST() {
   try {
-    const countryCode = await getCountry();
-    await registerVisit(countryCode);
+    // const countryCode = await getCountry();
+    // await registerVisit(countryCode);
 
     return Response.json(
       {
         success: true,
-        country: countryCode,
+        // country: countryCode,
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (err) {
     console.error("Error registrando visita:", err);
@@ -24,7 +24,7 @@ export async function POST() {
         success: false,
         error: "Error al registrar visita",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -32,15 +32,18 @@ export async function POST() {
 // GET: Obtener estadísticas de tráfico
 export async function GET() {
   try {
-    const stats = await getTrafficStats();
-    return Response.json(stats, { status: 200 });
+    // const stats = await getTrafficStats();
+    return Response.json(
+      // stats,
+      { status: 200 },
+    );
   } catch (err) {
     console.error("Error obteniendo estadísticas:", err);
     return Response.json(
       {
         error: "Error al obtener estadísticas",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
