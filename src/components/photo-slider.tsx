@@ -26,8 +26,10 @@ export default function PhotoSlider({
         ...sliderSettings,
     };
 
+    const heightClass = fotos.length === 0 ? "h-0" : "h-64";
+
     return (
-        <div className={`${className} relative ${fotos.length === 0 ? "h-0" : "h-64"}`}>
+        <div className={`${className} relative ${heightClass}`}>
             {fotos && fotos.length > 1 ? (
                 <Slider {...defaultSettings} className="h-full">
                     {fotos.map((foto, index) => (

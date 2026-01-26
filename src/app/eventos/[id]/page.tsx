@@ -11,10 +11,17 @@ import PhotoSlider from '@/components/photo-slider';
 
 
 interface EventoDetailsPageProps {
-    params: Promise<{
+    params: {
         id: string;
-    }>;
+    };
 }
+
+export function generateStaticParams() {
+    return eventosData.map((evento) => ({
+        id: evento.id.toString(),
+    }));
+}
+
 
 const formatFecha = (fechaStr: string): string => {
     // Convierte "15/01/2025" a "15 de enero de 2025"
@@ -23,17 +30,17 @@ const formatFecha = (fechaStr: string): string => {
     return `${parseInt(dia)} de ${meses[parseInt(mes) - 1]} de ${año}`;
 };
 
-export default async function EventoDetailsPage({
-    params,
-}: EventoDetailsPageProps) {
-    const { id } = await params;
+export default function EventoDetailsPage({ params }: EventoDetailsPageProps) {
+
+    const { id } = params;
     const evento: Evento | undefined = eventosData.find(
         (item: Evento) => item.id === parseInt(id)
     );
 
     if (!evento) {
-        notFound();
+        return <div>Evento no encontrado</div>;
     }
+
 
     const sliderSettings = {
         dots: true,
