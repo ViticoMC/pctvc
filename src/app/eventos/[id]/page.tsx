@@ -11,9 +11,9 @@ import PhotoSlider from '@/components/photo-slider';
 
 
 interface EventoDetailsPageProps {
-    params: {
+    params: Promise<{
         id: string;
-    };
+    }>;
 }
 
 export function generateStaticParams() {
@@ -30,9 +30,9 @@ const formatFecha = (fechaStr: string): string => {
     return `${parseInt(dia)} de ${meses[parseInt(mes) - 1]} de ${año}`;
 };
 
-export default function EventoDetailsPage({ params }: EventoDetailsPageProps) {
+export default async function EventoDetailsPage({ params }: EventoDetailsPageProps) {
 
-    const { id } = params;
+    const { id } = await params;
     const evento: Evento | undefined = eventosData.find(
         (item: Evento) => item.id === parseInt(id)
     );

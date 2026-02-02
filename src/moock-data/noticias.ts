@@ -26,7 +26,7 @@ export const noticias: Noticia[] = [
       audios: [],
       documents: [],
     },
-    id: 3,
+    id: "3",
   },
   {
     title: "Avanzamos en Ciencia y Tecnología",
@@ -47,7 +47,7 @@ export const noticias: Noticia[] = [
       audios: [],
       documents: [],
     },
-    id: 2,
+    id: "2",
   },
   {
     title: "Fortaleciendo la cooperación Internacional",
@@ -66,7 +66,7 @@ export const noticias: Noticia[] = [
       audios: [],
       documents: [],
     },
-    id: 1,
+    id: "1",
   },
 
   {
@@ -89,7 +89,7 @@ export const noticias: Noticia[] = [
       audios: ["entrevista-opciones.mp3"],
       documents: [],
     },
-    id: 4,
+    id: "4",
   },
 
   {
@@ -107,6 +107,6 @@ export const noticias: Noticia[] = [
       audios: [],
       documents: [],
     },
-    id: 5,
+    id: "5",
   },
 ];
