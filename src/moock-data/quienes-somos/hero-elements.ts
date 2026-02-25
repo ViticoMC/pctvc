@@ -1,5 +1,6 @@
 import { AnimatedDirection } from "@/type/animated-direction";
 import { Eye, LucideIcon, Target } from "lucide-react";
+import heroElementsData from "@/data/quienes-somos/hero-elements.json";
 
 export interface HeroElement {
   title: string;
@@ -9,9 +10,15 @@ export interface HeroElement {
   icon: LucideIcon;
 }
 
-export const heroElements: HeroElement[] = [
-  {
-    title: "MISIÓN",
+const iconMap: { [key: string]: LucideIcon } = {
+  Target,
+  Eye,
+};
+
+export const heroElements: HeroElement[] = heroElementsData.map((element: any) => ({
+  ...element,
+  icon: iconMap[element.icon],
+}));
     description: `   Contribuir al desarrollo industrial, participando y coadyuvando a la creación, implantación,
               funcionamiento, fortalecimiento , lanzamiento de nuevas entidades (productos nuevos  o mejorados y empresas),
               adoptando sistemas de gestion integrada que incrementen el fondo de bienes exportables y la sustitucion de
