@@ -1,6 +1,3 @@
 import historiaData from "@/data/quienes-somos/historia.json";
 
-export const historia = historiaData;ógico de Villa Clara surge como respuesta a las necesidades de desarrollo industrial identificadas en la estrategia territorial de la provincia. La industria villaclareña aporta más del 50% de la producción mercantil del territorio y cuenta con fábricas únicas en el país, como INPUD “1ro de Mayo”, la Productora de Bujías “Neftalí Martínez” y la Empresa Electroquímica.",
-  "A partir de las políticas nacionales de ciencia, tecnología e innovación se estableció un trabajo conjunto entre MINDUS, UCLV y CITMA para analizar la viabilidad de un parque tecnológico de corte industrial. Durante la visita gubernamental de octubre de 2020, la Vice Primera Ministra Inés María Chapman destacó la conveniencia de su creación en Villa Clara, dada la madurez industrial y el potencial humano del territorio.",
-  "La creación del PCT Villa Clara busca dinamizar la innovación, modernizar procesos industriales, atraer inversión, fomentar la creación de nuevas empresas y fortalecer la articulación entre el sector del conocimiento, el gobierno y las entidades productivas. Con esto, el territorio avanza hacia un modelo de desarrollo basado en la ciencia, la tecnología y la innovación como pilares transformadores.",
-];
+export const historia = historiaData;
