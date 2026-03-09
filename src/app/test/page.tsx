@@ -6,8 +6,13 @@ export default function Page() {
     const [text, setText] = useState('')
 
     async function getData() {
-        const res = await fetch("/node/").then(res => res.json())
-        setText(res.text)
+        try {
+            const res = await fetch("/node/").then(res => res.json())
+            setText(res.text)
+        } catch (error) {
+            console.error("Error fetching data:", error)
+            setText("Error fetching data")
+        }
     }
 
     useEffect(() => {
