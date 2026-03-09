@@ -2,7 +2,7 @@ import { BackButton } from "@/components/back-button";
 import PhotoSlider from "@/components/photo-slider";
 import { noticias } from "@/moock-data/noticias";
 import { notFound } from "next/navigation";
-import { Activity, Suspense } from "react";
+import { Suspense } from "react";
 
 export function generateStaticParams() {
     return noticias.map((noticia) => ({
@@ -29,17 +29,27 @@ function NoticiasLoadingFallback() {
     );
 }
 
+type PageProps = {
+    params: Promise<{
+        id: string;
+    }>;
+};
+
 function getNoticia(id: string) {
-    return noticias.find((noticia) => noticia.id === Number(id));
+    console.log("Buscando noticia con ID:", id);
+
+    return noticias.find((noticia) => noticia.id === id);
 }
 
-export default function PaginaNoticias({ params }: { params: { id: string } }) {
-    const { id } = params;
+export default async function PaginaNoticias({ params }: PageProps) {
+    console.log("PARAMS:", params);
+
+    const { id } = await params;
     const noticia = getNoticia(id);
 
-    if (!noticia) {
-        return <div>Noticia no encontrada</div>;
-    }
+
+
+    if (!noticia) return notFound();
 
     const { imagenes, videos, audios, documents } = noticia.multimedia;
 
@@ -65,7 +75,7 @@ export default function PaginaNoticias({ params }: { params: { id: string } }) {
                         <div className="prose max-w-none">
                             {noticia.descripcion}
                         </div>
-                        <Activity mode={matInteres ? "visible" : "hidden"}>
+                        {matInteres && (
                             <section className="mt-12 border-t border-border pt-8">
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">
                                     Material de interés
@@ -151,7 +161,8 @@ export default function PaginaNoticias({ params }: { params: { id: string } }) {
 
                                 </div>
                             </section>
-                        </Activity>
+                        )
+                        }
                     </article>
 
                 </div>

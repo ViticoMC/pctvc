@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Incentivos fiscales sostenidos",
+    "description": "Las empresas incubadas disfrutan de una exención total de tributos sobre utilidades durante los primeros cinco (5) años de funcionamiento, lo que reduce la presión financiera inicial y permite concentrar recursos en innovación, crecimiento y consolidación empresarial.",
+    "icon": "BadgeDollarSign",
+    "bgColor": "bg-blue-100",
+    "textColor": "text-blue-600"
+  },
+  {
+    "id": 2,
+    "title": "Facilitación de importaciones",
+    "description": "Se otorga la exención del pago de aranceles por la importación de partes, piezas y equipamiento necesarios para el funcionamiento de las empresas incubadas, asegurando acceso oportuno a tecnología y reduciendo significativamente los costos operativos.",
+    "icon": "PackageCheck",
+    "bgColor": "bg-emerald-100",
+    "textColor": "text-emerald-600"
+  },
+  {
+    "id": 3,
+    "title": "Ecosistema de ciencia e innovación",
+    "description": "El Parque ofrece un entorno especializado para la investigación, el desarrollo tecnológico y la innovación, fomentando la colaboración multidisciplinaria y la generación de soluciones de alto valor agregado, alejadas de las limitaciones de los entornos productivos tradicionales.",
+    "icon": "FlaskConical",
+    "bgColor": "bg-purple-100",
+    "textColor": "text-purple-600"
+  },
+  {
+    "id": 4,
+    "title": "Ubicación estratégica y conectividad",
+    "description": "Ubicado en la zona industrial de Santa Clara, en el centro del país, el Parque posee una localización estratégica única. Su cercanía a polos industriales, así como el acceso directo a la Carretera Central, la Autopista Nacional, la Línea Central de Ferrocarril, el Puerto de Cienfuegos y La Habana, garantizan una conectividad logística eficiente y competitiva.",
+    "icon": "MapPin",
+    "bgColor": "bg-orange-100",
+    "textColor": "text-orange-600"
+  }
+]

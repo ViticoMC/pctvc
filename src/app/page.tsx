@@ -8,8 +8,16 @@ import { USALProvider } from '@usal/react';
 import Image from "next/image"
 import { VentajasParque } from "@/components/ventajas-section"
 import ConvergenciaParque from "@/components/home/confluencia"
-// import FlagsCounter from "@/components/home/flags-counter"
 import { ContactForm } from "./contacto/page"
+import type { Metadata } from "next"
+import { generateMetadata, siteConfig } from "@/lib/seo-config"
+
+export const metadata: Metadata = generateMetadata(
+  "Parque Científico Tecnológico Villa Clara",
+  "Centro de innovación y desarrollo tecnológico. Fomentamos la innovación, creatividad y emprendimiento basado en ciencia e investigación.",
+  "/",
+  siteConfig.ogImage
+)
 
 export default function Home() {
   return (

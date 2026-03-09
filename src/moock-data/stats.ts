@@ -1,6 +1,3 @@
-export const stats = [
-  { number: "31", label: "Proyectos gestionados", color: "text-accent" },
-  { number: "28", label: "Empresariales", color: "text-accent" },
-  { number: "1", label: "Cooperación", color: "text-accent" },
-  { number: "9", label: "Innovación tecnológica", color: "text-accent" },
-];
+import statsData from "@/data/stats.json";
+
+export const stats = statsData;
