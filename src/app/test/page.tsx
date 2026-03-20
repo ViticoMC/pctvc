@@ -7,8 +7,13 @@ export default function Page() {
 
     async function getData() {
         try {
-            const res = await fetch("http://localhost:9081/app/").then(res => res.json())
-            setText(res.text)
+            fetch("/node/app/api/saludo")
+                .then(res => res.json())
+                .then(data => {
+                    setText(data)
+                    console.log(data)
+                });
+
         } catch (error) {
             console.error("Error fetching data:", error)
             setText("Error fetching data")
