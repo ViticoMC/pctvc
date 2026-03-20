@@ -7,7 +7,7 @@ export default function Page() {
 
     async function getData() {
         try {
-            fetch("/node/app/api/saludo")
+            fetch("/node/api/saludo")
                 .then(res => res.json())
                 .then(data => {
                     setText(data)
